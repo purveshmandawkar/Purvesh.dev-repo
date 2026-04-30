@@ -1,0 +1,1035 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Purvesh Mandawkar — Electronics Builder, ENTC Pune</title>
+  <meta name="description" content="Purvesh Mandawkar — ENTC student at Sinhgad College of Engineering, Pune. Building embedded systems, IoT, and PCB design projects." />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&family=IBM+Plex+Mono:wght@400;500&family=Syne:wght@400;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --bg: #ffffff;
+      --bg2: #f7f7f5;
+      --card: #ffffff;
+      --accent: #18794e;
+      --accent-light: #e8f5ee;
+      --text: #111111;
+      --muted: #6b7280;
+      --border: #e4e4e0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "DM Sans", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.5;
+    }
+
+    .top-accent {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      background: var(--accent);
+      z-index: 1200;
+      pointer-events: none;
+    }
+
+    nav {
+      position: fixed;
+      top: 3px;
+      left: 0;
+      width: 100%;
+      padding: 1rem 3rem;
+      background: #ffffff;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      z-index: 1100;
+    }
+
+    .nav-logo {
+      font-family: "IBM Plex Mono", monospace;
+      color: var(--accent);
+      text-decoration: none;
+      font-size: 0.88rem;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1.3rem;
+    }
+
+    .nav-links a {
+      font-family: "DM Sans", sans-serif;
+      font-size: 0.88rem;
+      color: var(--muted);
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--text);
+    }
+
+    #hero {
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      width: min(1100px, 100%);
+      margin: 0 auto 0;
+      padding: 6rem 3rem;
+      background: var(--bg);
+    }
+
+    .hero-label {
+      font-family: "IBM Plex Mono", monospace;
+      color: var(--accent);
+      font-size: 0.7rem;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      margin-bottom: 0.85rem;
+    }
+
+    .hero-label::before {
+      content: "";
+      width: 20px;
+      height: 1px;
+      background: var(--accent);
+    }
+
+    #hero h1 {
+      font-size: clamp(3rem, 6vw, 5rem);
+      font-family: "Syne", sans-serif;
+      font-weight: 700;
+      color: var(--text);
+      letter-spacing: -0.03em;
+      margin-bottom: 1rem;
+    }
+
+    .hero-oneliner {
+      font-family: "DM Sans", sans-serif;
+      color: var(--muted);
+      max-width: 540px;
+      font-size: 1.1rem;
+      margin-bottom: 1rem;
+    }
+
+    .hero-meta {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.78rem;
+      color: var(--muted);
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--accent);
+      animation: dot-pulse 1.4s ease-in-out infinite;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 0.75rem;
+    }
+
+    .hero-btn {
+      text-decoration: none;
+      padding: 0.7rem 1.2rem;
+      border: 1px solid var(--border);
+      font-family: "DM Sans", sans-serif;
+      font-size: 0.82rem;
+      font-weight: 500;
+    }
+
+    .hero-btn-primary {
+      background: var(--accent);
+      border-color: var(--accent);
+      color: #ffffff;
+    }
+
+    .hero-btn-outline {
+      background: #ffffff;
+      color: var(--text);
+    }
+
+    @keyframes dot-pulse {
+      0%,
+      100% {
+        transform: scale(1);
+        opacity: 1;
+      }
+      50% {
+        transform: scale(1.45);
+        opacity: 0.6;
+      }
+    }
+
+    #about,
+    #skills,
+    #projects,
+    #events,
+    #contact,
+    #hero {
+      width: min(1100px, 100%);
+      margin: 0 auto;
+      padding: 6rem 3rem;
+      position: relative;
+    }
+
+    #about::before,
+    #projects::before,
+    #contact::before,
+    #skills::before,
+    #events::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      left: 50%;
+      width: 100vw;
+      transform: translateX(-50%);
+      z-index: -1;
+    }
+
+    #about::before,
+    #projects::before,
+    #contact::before {
+      background: var(--bg2);
+    }
+
+    #skills::before,
+    #events::before {
+      background: var(--bg);
+    }
+
+    .section-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.7rem;
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      margin-bottom: 0.8rem;
+    }
+
+    .section-label::after {
+      content: "";
+      width: 28px;
+      height: 1px;
+      background: var(--accent);
+    }
+
+    .section-title {
+      font-family: "Syne", sans-serif;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 1.5rem;
+    }
+
+    .about-layout {
+      display: grid;
+      grid-template-columns: 1.1fr 1fr;
+      gap: 2rem;
+      align-items: start;
+    }
+
+    .about-text {
+      color: var(--muted);
+      line-height: 1.8;
+    }
+
+    .about-stats {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1rem;
+    }
+
+    .stat-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-top: 2px solid var(--accent);
+      padding: 1rem;
+    }
+
+    .stat-number {
+      font-family: "Syne", sans-serif;
+      font-size: 2rem;
+      color: var(--accent);
+      line-height: 1.1;
+    }
+
+    .stat-label {
+      margin-top: 0.35rem;
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.75rem;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1rem;
+    }
+
+    .skill-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      padding: 1rem;
+      transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .skill-card:hover {
+      border-color: var(--accent);
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+    }
+
+    .skill-category {
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.7rem;
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 0.8rem;
+    }
+
+    .skill-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      list-style: none;
+    }
+
+    .skill-tags li {
+      background: #ffffff;
+      border: 1px solid var(--border);
+      padding: 0.32rem 0.55rem;
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.73rem;
+      color: var(--text);
+      transition: border-color 0.2s ease, color 0.2s ease;
+    }
+
+    .skill-tags li:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+      background: var(--accent-light);
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .project-card {
+      position: relative;
+      background: var(--card);
+      border: 1px solid var(--border);
+      padding: 1.75rem;
+      overflow: hidden;
+      transition: border-color 0.22s ease, box-shadow 0.22s ease;
+    }
+
+    .project-card:hover {
+      border-color: var(--accent);
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+    }
+
+    .project-card.in-progress {
+      border-left: 2px solid #1a56db;
+    }
+
+    .project-top {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 0.8rem;
+      margin-bottom: 0.85rem;
+    }
+
+    .project-name {
+      color: var(--text);
+      font-size: 1rem;
+      font-family: "Syne", sans-serif;
+      font-weight: 600;
+      line-height: 1.4;
+    }
+
+    .project-status {
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.65rem;
+      letter-spacing: 0.06em;
+      white-space: nowrap;
+      padding: 0.2rem 0.5rem;
+      border: 1px solid transparent;
+    }
+
+    .project-status.done {
+      background: var(--accent-light);
+      color: var(--accent);
+    }
+
+    .project-status.in-progress {
+      background: #e8f0fb;
+      color: #1a56db;
+    }
+
+    .project-desc {
+      color: var(--muted);
+      font-size: 0.87rem;
+      line-height: 1.65;
+      margin-bottom: 0.9rem;
+    }
+
+    .project-tech {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.45rem;
+      list-style: none;
+      margin-bottom: 0.95rem;
+    }
+
+    .project-tech li {
+      background: #ffffff;
+      border: 1px solid var(--border);
+      padding: 0.26rem 0.48rem;
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.7rem;
+      color: var(--text);
+    }
+
+    .project-insight {
+      border-left: 2px solid var(--border);
+      padding-left: 0.6rem;
+      color: var(--muted);
+      font-size: 0.8rem;
+      font-style: italic;
+    }
+
+    .events-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      list-style: none;
+    }
+
+    .event-card {
+      display: grid;
+      grid-template-columns: minmax(260px, 1fr) 1.35fr;
+      gap: 1.25rem;
+      align-items: center;
+      width: 100%;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-left: 2px solid transparent;
+      padding: 1.25rem 1.35rem;
+      transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .event-card:hover {
+      border-color: var(--accent);
+      border-left-width: 3px;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+    }
+
+    .event-head {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .event-name {
+      color: var(--text);
+      font-size: 1rem;
+      font-family: "Syne", sans-serif;
+      font-weight: 600;
+    }
+
+    .event-year {
+      font-family: "IBM Plex Mono", monospace;
+      color: var(--accent);
+      font-size: 0.72rem;
+      letter-spacing: 0.04em;
+    }
+
+    .event-desc {
+      color: var(--muted);
+      font-size: 0.87rem;
+      line-height: 1.65;
+    }
+
+    #contact {
+      text-align: center;
+    }
+
+    .contact-wrap {
+      max-width: 500px;
+      margin: 0 auto;
+    }
+
+    .contact-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0.65rem;
+      margin-bottom: 1rem;
+    }
+
+    .contact-row {
+      display: grid;
+      grid-template-columns: 18px 90px 1fr;
+      gap: 0.6rem;
+      align-items: center;
+      text-align: left;
+      background: var(--card);
+      border: 1px solid var(--border);
+      padding: 0.75rem 0.8rem;
+    }
+
+    .contact-icon {
+      color: var(--muted);
+      font-size: 0.8rem;
+      text-align: center;
+    }
+
+    .contact-label {
+      font-family: "IBM Plex Mono", monospace;
+      color: var(--muted);
+      font-size: 0.76rem;
+    }
+
+    .contact-link {
+      color: var(--accent);
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.76rem;
+      text-decoration: none;
+      word-break: break-word;
+    }
+
+    .contact-link:hover {
+      text-decoration: underline;
+    }
+
+    .contact-note {
+      color: var(--muted);
+      font-size: 0.85rem;
+      line-height: 1.6;
+    }
+
+    .site-footer {
+      background: var(--bg2);
+      border-top: 1px solid var(--border);
+      text-align: center;
+      padding: 2rem;
+      font-family: "IBM Plex Mono", monospace;
+      color: var(--muted);
+      font-size: 0.72rem;
+    }
+
+    #lab {
+      background: var(--bg);
+      position: relative;
+    }
+
+    #lab::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      left: 50%;
+      width: 100vw;
+      transform: translateX(-50%);
+      background: var(--bg);
+      z-index: -1;
+    }
+
+    .section-wrap {
+      width: min(1100px, 100%);
+      margin: 0 auto;
+      padding: 6rem 3rem;
+    }
+
+    #lab h2 {
+      font-family: "Syne", sans-serif;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 1rem;
+    }
+
+    .lab-sub {
+      color: var(--muted);
+      font-size: 1rem;
+      max-width: 480px;
+      margin-bottom: 2.5rem;
+      line-height: 1.7;
+    }
+
+    .lab-grid {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      grid-auto-rows: 110px;
+      gap: 8px;
+    }
+
+    .lab-img {
+      overflow: hidden;
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      position: relative;
+    }
+
+    /* Row 1: big flatlay hero + collage */
+    .lab-img:nth-child(1) { grid-column: span 7; grid-row: span 3; } /* all boards flatlay */
+    .lab-img:nth-child(2) { grid-column: span 5; grid-row: span 3; } /* Purvesh working collage */
+
+    /* Row 2: three medium shots */
+    .lab-img:nth-child(3) { grid-column: span 4; grid-row: span 2; } /* ESP32 in box */
+    .lab-img:nth-child(4) { grid-column: span 4; grid-row: span 2; } /* relay + gas sensor board */
+    .lab-img:nth-child(5) { grid-column: span 4; grid-row: span 2; } /* powered on LEDs */
+
+    /* Row 3: wide shot + small OLED */
+    .lab-img:nth-child(6) { grid-column: span 9; grid-row: span 2; } /* multiple boards on table */
+    .lab-img:nth-child(7) { grid-column: span 3; grid-row: span 2; } /* OLED face module */
+
+    .lab-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.5s ease;
+    }
+
+    .lab-img:hover img {
+      transform: scale(1.04);
+    }
+
+    @media (max-width: 640px) {
+      nav {
+        padding: 0.75rem 1rem;
+        flex-wrap: nowrap;
+        gap: 0.5rem;
+        justify-content: space-between;
+      }
+
+      .nav-links {
+        display: flex;
+        flex-wrap: nowrap;
+        gap: 0.75rem;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+      }
+
+      .nav-links::-webkit-scrollbar {
+        display: none;
+      }
+
+      .nav-links a {
+        white-space: nowrap;
+        font-size: 0.82rem;
+      }
+
+      #hero {
+        padding: 5.5rem 1.25rem 3rem;
+        min-height: 100svh;
+      }
+
+      #hero h1 {
+        font-size: clamp(2.2rem, 9vw, 3.2rem);
+        margin-bottom: 0.75rem;
+      }
+
+      .hero-oneliner {
+        font-size: 0.95rem;
+      }
+
+      .hero-meta {
+        flex-wrap: wrap;
+        font-size: 0.72rem;
+      }
+
+      .hero-actions {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      #about,
+      #skills,
+      #projects,
+      #lab .section-wrap,
+      #events,
+      #contact {
+        padding: 4rem 1.25rem;
+      }
+
+      .about-layout,
+      .about-stats,
+      .skills-grid,
+      .projects-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .event-card {
+        grid-template-columns: 1fr;
+      }
+
+      .contact-row {
+        grid-template-columns: 18px 1fr;
+      }
+
+      .contact-link {
+        grid-column: 1 / -1;
+      }
+
+      .lab-grid {
+        grid-template-columns: 1fr 1fr;
+        grid-auto-rows: 140px;
+      }
+
+      .lab-img:nth-child(1) { grid-column: span 2; grid-row: span 2; }
+      .lab-img:nth-child(2) { grid-column: span 2; grid-row: span 2; }
+      .lab-img:nth-child(3) { grid-column: span 1; grid-row: span 1; }
+      .lab-img:nth-child(4) { grid-column: span 1; grid-row: span 1; }
+      .lab-img:nth-child(5) { grid-column: span 2; grid-row: span 1; }
+      .lab-img:nth-child(6) { grid-column: span 2; grid-row: span 2; }
+      .lab-img:nth-child(7) { grid-column: span 2; grid-row: span 1; }
+    }
+  </style>
+</head>
+<body>
+  <div class="top-accent" aria-hidden="true"></div>
+  <header>
+    <nav>
+      <a class="nav-logo" href="#hero">PM.dev</a>
+      <div class="nav-links">
+        <a href="#hero">Home</a>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section id="hero">
+      <div class="hero-content">
+        <p class="hero-label">Electronics Builder</p>
+        <h1>Purvesh Mandawkar</h1>
+        <p class="hero-oneliner">"A builder turning ideas into real hardware — and eventually into a business."</p>
+        <div class="hero-meta">
+          <span class="hero-dot" aria-hidden="true"></span>
+          <p>Electronics &amp; Telecommunication, 2nd Year — Sinhgad College of Engineering, Pune</p>
+        </div>
+        <div class="hero-actions">
+          <a class="hero-btn hero-btn-primary" href="#projects">View Projects</a>
+          <a class="hero-btn hero-btn-outline" href="#contact">Get In Touch</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <p class="section-label">Projects</p>
+      <h2 class="section-title">Projects</h2>
+      <div class="projects-grid">
+        <article class="project-card done">
+          <div class="project-top">
+            <h3 class="project-name">ECG &amp; Heart Rate Monitor</h3>
+            <span class="project-status done">DONE</span>
+          </div>
+          <p class="project-desc">
+            Captures bio-signals from skin, processes noisy analog ECG data, and displays heart rate.
+          </p>
+          <ul class="project-tech">
+            <li>AD8232</li>
+            <li>ESP32</li>
+            <li>Analog Signal Chain</li>
+          </ul>
+          <p class="project-insight">Key insight: stable filtering is everything when dealing with micro-volt ECG noise.</p>
+        </article>
+
+        <article class="project-card done">
+          <div class="project-top">
+            <h3 class="project-name">Water Pump Automation</h3>
+            <span class="project-status done">DONE</span>
+          </div>
+          <p class="project-desc">
+            Automatically switches pump ON/OFF by water level with reliable relay-based control logic.
+          </p>
+          <ul class="project-tech">
+            <li>Float Switch</li>
+            <li>Relay</li>
+            <li>ESP32</li>
+          </ul>
+          <p class="project-insight">Key insight: simple fail-safe logic prevents most real-world control failures.</p>
+        </article>
+
+        <article class="project-card done">
+          <div class="project-top">
+            <h3 class="project-name">Home Automation</h3>
+            <span class="project-status done">DONE</span>
+          </div>
+          <p class="project-desc">WiFi-based control of home appliances directly from a mobile phone app.</p>
+          <ul class="project-tech">
+            <li>ESP32</li>
+            <li>Blynk</li>
+            <li>WiFi Control</li>
+          </ul>
+          <p class="project-insight">Key insight: latency and connection reliability matter more than feature count.</p>
+        </article>
+
+        <article class="project-card done">
+          <div class="project-top">
+            <h3 class="project-name">Water Level Controller</h3>
+            <span class="project-status done">DONE</span>
+          </div>
+          <p class="project-desc">Monitors tank water levels and triggers indicator alerts for quick action.</p>
+          <ul class="project-tech">
+            <li>Water Level Sensor</li>
+            <li>Indicator Output</li>
+            <li>Monitoring Logic</li>
+          </ul>
+          <p class="project-insight">Key insight: clear, readable indicators are critical in utility-focused hardware.</p>
+        </article>
+
+        <article class="project-card done">
+          <div class="project-top">
+            <h3 class="project-name">Automatic Sprinkler System</h3>
+            <span class="project-status done">DONE</span>
+          </div>
+          <p class="project-desc">Auto-irrigates crops based on real-time soil moisture conditions.</p>
+          <ul class="project-tech">
+            <li>Soil Moisture Sensor</li>
+            <li>Relay</li>
+            <li>Automation Logic</li>
+          </ul>
+          <p class="project-insight">Key insight: moisture threshold tuning decides water savings and crop health.</p>
+        </article>
+
+        <article class="project-card in-progress">
+          <div class="project-top">
+            <h3 class="project-name">AI Voice Chatbot (ESP32-S3)</h3>
+            <span class="project-status in-progress">IN PROGRESS</span>
+          </div>
+          <p class="project-desc">
+            Building an Alexa-like voice assistant on edge hardware using ESP32-S3 for PSRAM and processing power.
+          </p>
+          <ul class="project-tech">
+            <li>ESP32-S3</li>
+            <li>Edge AI</li>
+            <li>Voice Pipeline</li>
+          </ul>
+          <p class="project-insight">Key insight: memory optimization is the core challenge for on-device voice systems.</p>
+        </article>
+
+        <article class="project-card in-progress">
+          <div class="project-top">
+            <h3 class="project-name">Farming Pump Automation (Industrial)</h3>
+            <span class="project-status in-progress">IN PROGRESS</span>
+          </div>
+          <p class="project-desc">
+            Industrial-scale agricultural pump control with multi-pump logic and field condition monitoring.
+          </p>
+          <ul class="project-tech">
+            <li>Industrial Control</li>
+            <li>Multi-Pump Logic</li>
+            <li>Field Monitoring</li>
+          </ul>
+          <p class="project-insight">Key insight: industrial reliability depends on robust control states and fallback behavior.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="skills">
+      <p class="section-label">Skills</p>
+      <h2 class="section-title">Skills</h2>
+      <div class="skills-grid">
+        <article class="skill-card">
+          <h3 class="skill-category">Microcontrollers</h3>
+          <ul class="skill-tags">
+            <li>Arduino</li>
+            <li>ESP32</li>
+            <li>ESP32-S3</li>
+          </ul>
+        </article>
+        <article class="skill-card">
+          <h3 class="skill-category">Programming</h3>
+          <ul class="skill-tags">
+            <li>Embedded C</li>
+            <li>Logic Building</li>
+          </ul>
+        </article>
+        <article class="skill-card">
+          <h3 class="skill-category">PCB &amp; Circuit Design</h3>
+          <ul class="skill-tags">
+            <li>KiCad</li>
+            <li>Schematic Design</li>
+            <li>PCB Layout</li>
+            <li>Soldering</li>
+          </ul>
+        </article>
+        <article class="skill-card">
+          <h3 class="skill-category">Hardware</h3>
+          <ul class="skill-tags">
+            <li>Relay Modules</li>
+            <li>Sensors</li>
+            <li>Actuators</li>
+            <li>Signal Chains</li>
+            <li>Basic Electronics</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section id="about">
+      <p class="section-label">About</p>
+      <h2 class="section-title">About</h2>
+      <div class="about-layout">
+        <p class="about-text">
+          Started with curiosity. Saw a circuit work for the first time and realized electronics isn't
+          theory — it's a tool to build real products. That's what pulled me deeper.
+        </p>
+        <div class="about-stats">
+          <article class="stat-card">
+            <p class="stat-number">5+</p>
+            <p class="stat-label">Projects Built</p>
+          </article>
+          <article class="stat-card">
+            <p class="stat-number">2</p>
+            <p class="stat-label">Events</p>
+          </article>
+          <article class="stat-card">
+            <p class="stat-number">7</p>
+            <p class="stat-label">Skills</p>
+          </article>
+          <article class="stat-card">
+            <p class="stat-number">2nd</p>
+            <p class="stat-label">Year</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="lab">
+      <div class="section-wrap">
+        <span class="section-label">From the Lab</span>
+        <h2>Real builds. Real bench.</h2>
+        <p class="lab-sub">
+          Every project starts with components on a table and ends with something that actually works.
+        </p>
+
+        <div class="lab-grid">
+          <div class="lab-img">
+            <img src="images/lab-7.jpg" alt="All hardware builds laid out" />
+          </div>
+          <div class="lab-img">
+            <img src="images/lab-2.jpg" alt="Building hardware at lab bench" />
+          </div>
+          <div class="lab-img">
+            <img src="images/lab-3.jpg" alt="ESP32 build inside enclosure" />
+          </div>
+          <div class="lab-img">
+            <img src="images/lab-4.jpg" alt="Relay and gas sensor board" />
+          </div>
+          <div class="lab-img">
+            <img src="images/lab-5.jpg" alt="Circuit board powered on with LEDs" />
+          </div>
+          <div class="lab-img">
+            <img src="images/lab-6.jpg" alt="Multiple hardware projects on bench" />
+          </div>
+          <div class="lab-img">
+            <img src="images/lab-1.jpg" alt="ESP32-S3 OLED face module" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="events">
+      <p class="section-label">Events</p>
+      <h2 class="section-title">Events</h2>
+      <ul class="events-list">
+        <li class="event-card">
+          <div class="event-head">
+            <h3 class="event-name">Odoo Event</h3>
+            <span class="event-year">2025</span>
+          </div>
+          <p class="event-desc">
+            A product and innovation-focused event featuring industry talks, demos, and practical
+            insights into building scalable tech solutions.
+          </p>
+        </li>
+        <li class="event-card">
+          <div class="event-head">
+            <h3 class="event-name">EFY Expo Pune</h3>
+            <span class="event-year">2025</span>
+          </div>
+          <p class="event-desc">
+            Electronics-focused expo showcasing components, embedded systems, and current trends in
+            hardware product development.
+          </p>
+        </li>
+      </ul>
+    </section>
+
+    <section id="contact">
+      <p class="section-label">Contact</p>
+      <h2 class="section-title">Contact</h2>
+      <div class="contact-wrap">
+        <div class="contact-list">
+          <p class="contact-row">
+            <span class="contact-icon">[ ]</span>
+            <span class="contact-label">Email</span>
+            <a class="contact-link" href="mailto:mandawkarpurvesh@gmail.com">mandawkarpurvesh@gmail.com</a>
+          </p>
+          <p class="contact-row">
+            <span class="contact-icon">[ ]</span>
+            <span class="contact-label">GitHub</span>
+            <a class="contact-link" href="https://github.com/purveshmandawkar" target="_blank">github.com/purveshmandawkar</a>
+          </p>
+          <p class="contact-row">
+            <span class="contact-icon">[ ]</span>
+            <span class="contact-label">LinkedIn</span>
+            <a class="contact-link" href="https://www.linkedin.com/in/purvesh-mandawkar-790a9a1aa/" target="_blank">Purvesh Mandawkar on LinkedIn</a>
+          </p>
+        </div>
+        <p class="contact-note">
+          Open to internship opportunities in embedded systems / IoT / circuit design
+        </p>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer">Built by Purvesh Mandawkar — ENTC, SCE Pune</footer>
+
+</body>
+</html>
