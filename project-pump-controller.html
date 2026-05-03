@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fail-Safe 220V AC Pump Controller — Purvesh Mandawkar</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&family=IBM+Plex+Mono:wght@400;500&family=Syne:wght@400;700&display=swap" rel="stylesheet" />
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    :root {
+      --bg: #ffffff; --bg2: #f7f7f5; --card: #ffffff;
+      --accent: #18794e; --accent-light: #e8f5ee;
+      --text: #111111; --muted: #6b7280; --border: #e4e4e0;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: "DM Sans", sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
+
+    .top-accent { position: fixed; top: 0; left: 0; width: 100%; height: 3px; background: var(--accent); z-index: 1200; pointer-events: none; }
+
+    nav {
+      position: fixed; top: 3px; left: 0; width: 100%;
+      padding: 1rem 3rem; background: #ffffff;
+      border-bottom: 1px solid var(--border);
+      display: flex; align-items: center; justify-content: space-between; z-index: 1100;
+    }
+    .nav-logo { font-family: "IBM Plex Mono", monospace; color: var(--accent); text-decoration: none; font-size: 0.88rem; }
+    .nav-links { display: flex; gap: 1.3rem; }
+    .nav-links a { font-size: 0.88rem; color: var(--muted); text-decoration: none; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--text); }
+
+    .page-wrap { width: min(780px, 100%); margin: 0 auto; padding: 7rem 2rem 5rem; }
+
+    .back-link {
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      font-family: "IBM Plex Mono", monospace; font-size: 0.75rem;
+      color: var(--muted); text-decoration: none; margin-bottom: 2.5rem;
+      transition: color 0.2s;
+    }
+    .back-link:hover { color: var(--accent); }
+
+    .project-header { margin-bottom: 3rem; }
+    .project-tag {
+      font-family: "IBM Plex Mono", monospace; font-size: 0.7rem;
+      color: var(--accent); text-transform: uppercase; letter-spacing: 0.15em;
+      display: inline-flex; align-items: center; gap: 0.5rem; margin-bottom: 1rem;
+    }
+    .project-tag::before { content: ""; width: 20px; height: 1px; background: var(--accent); }
+    h1 {
+      font-family: "Syne", sans-serif; font-weight: 700;
+      font-size: clamp(1.8rem, 4vw, 2.6rem); line-height: 1.2;
+      letter-spacing: -0.02em; margin-bottom: 1rem;
+    }
+    .project-summary {
+      font-size: 1.05rem; color: var(--muted); max-width: 620px;
+      line-height: 1.75; margin-bottom: 1.5rem;
+    }
+    .tag-row { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+    .tag {
+      background: var(--accent-light); color: var(--accent);
+      font-family: "IBM Plex Mono", monospace; font-size: 0.7rem;
+      padding: 0.28rem 0.55rem; border: 1px solid #c3e6d4;
+    }
+
+    .divider { height: 1px; background: var(--border); margin: 2.5rem 0; }
+
+    h2 {
+      font-family: "Syne", sans-serif; font-weight: 700;
+      font-size: 1.25rem; margin-bottom: 1rem; color: var(--text);
+    }
+    p { color: var(--muted); line-height: 1.8; margin-bottom: 1rem; }
+    p:last-child { margin-bottom: 0; }
+
+    .problem-block {
+      background: #fff8f0; border-left: 3px solid #f59e0b;
+      padding: 1.25rem 1.5rem; margin: 1.5rem 0;
+    }
+    .problem-block h3 {
+      font-family: "IBM Plex Mono", monospace; font-size: 0.72rem;
+      text-transform: uppercase; letter-spacing: 0.1em; color: #b45309;
+      margin-bottom: 0.6rem;
+    }
+    .problem-block p { color: #78350f; margin-bottom: 0.5rem; }
+
+    .solution-block {
+      background: var(--accent-light); border-left: 3px solid var(--accent);
+      padding: 1.25rem 1.5rem; margin: 1.5rem 0;
+    }
+    .solution-block h3 {
+      font-family: "IBM Plex Mono", monospace; font-size: 0.72rem;
+      text-transform: uppercase; letter-spacing: 0.1em; color: var(--accent);
+      margin-bottom: 0.6rem;
+    }
+    .solution-block p { color: #166534; margin-bottom: 0.5rem; }
+
+    .component-table { width: 100%; border-collapse: collapse; margin: 1.25rem 0; font-size: 0.87rem; }
+    .component-table th {
+      font-family: "IBM Plex Mono", monospace; font-size: 0.7rem;
+      text-transform: uppercase; letter-spacing: 0.08em;
+      background: var(--bg2); color: var(--muted);
+      padding: 0.6rem 0.8rem; text-align: left;
+      border: 1px solid var(--border);
+    }
+    .component-table td { padding: 0.65rem 0.8rem; border: 1px solid var(--border); color: var(--muted); vertical-align: top; }
+    .component-table td:first-child { color: var(--text); font-weight: 500; white-space: nowrap; }
+
+    .code-block {
+      background: #0f1117; border-radius: 0; border: 1px solid #2d2d2d;
+      padding: 1.5rem; overflow-x: auto; margin: 1.25rem 0;
+    }
+    .code-block pre { font-family: "IBM Plex Mono", monospace; font-size: 0.78rem; color: #e2e8f0; line-height: 1.7; white-space: pre; }
+    .code-label {
+      font-family: "IBM Plex Mono", monospace; font-size: 0.68rem;
+      color: var(--muted); text-transform: uppercase; letter-spacing: 0.1em;
+      margin-bottom: 0.5rem;
+    }
+
+    .insight-card {
+      background: var(--bg2); border: 1px solid var(--border);
+      border-top: 2px solid var(--accent); padding: 1.25rem 1.5rem; margin-top: 2rem;
+    }
+    .insight-card h3 {
+      font-family: "IBM Plex Mono", monospace; font-size: 0.7rem;
+      text-transform: uppercase; letter-spacing: 0.1em; color: var(--accent);
+      margin-bottom: 0.6rem;
+    }
+    .insight-card p { color: var(--text); font-style: italic; margin-bottom: 0; }
+
+    .site-footer {
+      background: var(--bg2); border-top: 1px solid var(--border);
+      text-align: center; padding: 2rem;
+      font-family: "IBM Plex Mono", monospace; color: var(--muted); font-size: 0.72rem;
+    }
+
+    @media (max-width: 640px) {
+      nav { padding: 0.75rem 1rem; }
+      .nav-links { gap: 0.75rem; overflow-x: auto; }
+      .nav-links a { white-space: nowrap; font-size: 0.8rem; }
+      .page-wrap { padding: 5.5rem 1.25rem 4rem; }
+      .component-table { font-size: 0.8rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="top-accent" aria-hidden="true"></div>
+  <header>
+    <nav>
+      <a class="nav-logo" href="index.html">PM.dev</a>
+      <div class="nav-links">
+        <a href="index.html#projects">Projects</a>
+        <a href="index.html#skills">Skills</a>
+        <a href="index.html#contact">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <div class="page-wrap">
+      <a class="back-link" href="index.html#projects">← Back to Projects</a>
+
+      <div class="project-header">
+        <p class="project-tag">Industrial Control · Power Electronics</p>
+        <h1>Fail-Safe 220V AC Pump Controller</h1>
+        <p class="project-summary">
+          An industrial-grade control system for a 1HP municipal water pump. Built to handle the three real-world failure modes that destroy standard relay setups — inrush surge, water turbulence, and microcontroller freeze.
+        </p>
+        <div class="tag-row">
+          <span class="tag">Power Electronics</span>
+          <span class="tag">Real-time Firmware</span>
+          <span class="tag">Watchdog Timer</span>
+          <span class="tag">Relay Control</span>
+          <span class="tag">Fail-safe Design</span>
+          <span class="tag">Embedded C</span>
+        </div>
+      </div>
+
+      <div class="divider"></div>
+
+      <h2>The Problem</h2>
+      <p>Standard smart plugs and basic Arduino relays fail on heavy industrial loads. Automating a 1HP water pump introduces three engineering challenges that most hobbyist builds completely ignore:</p>
+
+      <div class="problem-block">
+        <h3>Problem 1 — Inrush Surge</h3>
+        <p>A 1HP motor pulls a massive current spike on startup. When it shuts off, it shoots a high-voltage spike backward (back-EMF). This can weld standard relay contacts shut permanently.</p>
+      </div>
+
+      <div class="problem-block">
+        <h3>Problem 2 — Water Turbulence</h3>
+        <p>Water entering a tank creates waves. These waves cause the float switch to bounce rapidly — forcing the pump to violently switch ON and OFF like a machine gun. This destroys the motor and the relay within days.</p>
+      </div>
+
+      <div class="problem-block">
+        <h3>Problem 3 — Microcontroller Freeze</h3>
+        <p>Power fluctuations in a real environment can freeze the microcontroller. If it freezes while the pump is running, the tank runs dry and the motor burns out. No standard relay project handles this.</p>
+      </div>
+
+      <div class="divider"></div>
+
+      <h2>The Solution — Multi-layered Architecture</h2>
+      <p>The system is divided into three strictly isolated zones to prevent high-voltage arcing from reaching the control logic:</p>
+
+      <div class="solution-block">
+        <h3>Layer 1 — Power Isolation</h3>
+        <p>HLK-PM01 step-down converter safely converts 220V AC to clean 5V DC. A 2A glass fuse and MOV (Metal Oxide Varistor) protect against grid voltage spikes before they reach the electronics.</p>
+      </div>
+
+      <div class="solution-block">
+        <h3>Layer 2 — Control Logic (3.3V)</h3>
+        <p>IoT development board runs all logic on a safe, isolated 3.3V signal. Float switch input is stabilized with a 10kΩ pull-up resistor to prevent false triggers from electromagnetic noise.</p>
+      </div>
+
+      <div class="solution-block">
+        <h3>Layer 3 — High-power Actuation (220V)</h3>
+        <p>30A mechanical relay handles the 20A motor load. An RC snubber circuit wired across the relay contacts absorbs the destructive back-EMF spike every time the motor shuts off. A parallel 16A manual bypass switch keeps the pump running if the digital brain is destroyed by a lightning strike.</p>
+      </div>
+
+      <div class="divider"></div>
+
+      <h2>Components</h2>
+      <table class="component-table">
+        <thead>
+          <tr><th>Component</th><th>Role</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>HLK-PM01 Converter</td><td>Isolated 220V AC → 5V DC power supply for electronics</td></tr>
+          <tr><td>IoT Development Board</td><td>Main control logic, runs at 3.3V with built-in watchdog timer</td></tr>
+          <tr><td>30A Mechanical Relay</td><td>Switches the high-current 220V motor load</td></tr>
+          <tr><td>RC Snubber Circuit</td><td>Absorbs back-EMF spike when inductive motor switches off</td></tr>
+          <tr><td>MOV (Metal Oxide Varistor)</td><td>Clamps grid voltage spikes before they enter the circuit</td></tr>
+          <tr><td>Mechanical Float Switch</td><td>Waterproof water level sensor with 10kΩ pull-up resistor</td></tr>
+          <tr><td>16A Manual Bypass Switch</td><td>Hardware override — operates pump even if control board fails</td></tr>
+          <tr><td>2A Glass Fuse</td><td>Overcurrent protection for the low-voltage branch</td></tr>
+        </tbody>
+      </table>
+
+      <div class="divider"></div>
+
+      <h2>Firmware Architecture</h2>
+      <p>Standard hobbyist code uses <code>delay()</code>, which completely freezes the processor. This firmware uses a non-blocking state machine so the processor is always awake and monitoring safety protocols.</p>
+      <p>Two key software features solve the turbulence and freeze problems:</p>
+
+      <p class="code-label">Source Code — Non-blocking State Machine with Watchdog</p>
+      <div class="code-block">
+        <pre>#include &lt;esp_task_wdt.h&gt;
+
+// --- SYSTEM CONFIGURATION ---
+#define WDT_TIMEOUT     3       // Watchdog panic threshold (seconds)
+const int FLOAT_PIN   = 18;    // Tank sensor input
+const int RELAY_PIN   = 19;    // 30A Relay trigger
+const unsigned long DEBOUNCE_DELAY = 5000; // 5-sec wave turbulence filter
+
+// --- STATE MEMORY ---
+bool isPumpRunning        = false;
+int lastSteadyState       = HIGH;
+int lastRawState          = HIGH;
+unsigned long debounceTime = 0;
+
+void setup() {
+  // Configure relay FIRST (safety priority)
+  pinMode(RELAY_PIN, OUTPUT);
+  digitalWrite(RELAY_PIN, LOW);  // Force OFF on boot
+
+  // Configure sensor with internal pull-up
+  pinMode(FLOAT_PIN, INPUT_PULLUP);
+
+  // Arm the hardware watchdog
+  esp_task_wdt_init(WDT_TIMEOUT, true);
+  esp_task_wdt_add(NULL);
+}
+
+void loop() {
+  // PHASE 1: SURVIVAL — kick the watchdog (prevents freeze lockup)
+  esp_task_wdt_reset();
+
+  // PHASE 2: SENSING
+  int currentRaw = digitalRead(FLOAT_PIN);
+
+  // PHASE 3: DEBOUNCE — ignore wave turbulence
+  if (currentRaw != lastRawState) {
+    debounceTime = millis();  // Reset timer on any change
+  }
+
+  // Only act if sensor stable for 5 full seconds
+  if ((millis() - debounceTime) > DEBOUNCE_DELAY) {
+    if (currentRaw != lastSteadyState) {
+      lastSteadyState = currentRaw;
+
+      if (lastSteadyState == LOW &amp;&amp; !isPumpRunning) {
+        digitalWrite(RELAY_PIN, HIGH);  // Water arrived: Pump ON
+        isPumpRunning = true;
+      }
+      else if (lastSteadyState == HIGH &amp;&amp; isPumpRunning) {
+        digitalWrite(RELAY_PIN, LOW);   // Water dropped: Pump OFF (dry-run protection)
+        isPumpRunning = false;
+      }
+    }
+  }
+
+  lastRawState = currentRaw;
+}</pre>
+      </div>
+
+      <div class="divider"></div>
+
+      <h2>Key Engineering Decisions</h2>
+      <table class="component-table">
+        <thead>
+          <tr><th>Decision</th><th>Why</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>RC Snubber across relay</td><td>Without it, the back-EMF spike from the inductive motor will eventually weld relay contacts shut</td></tr>
+          <tr><td>5-second debounce filter</td><td>Water takes 3–5 seconds to settle after the pump changes state — any shorter causes chatter</td></tr>
+          <tr><td>Hardware watchdog (3s)</td><td>If firmware ever freezes mid-cycle, system reboots and forces pump to safe OFF state</td></tr>
+          <tr><td>Active-low relay init</td><td>Relay starts OFF on power-up — safe default prevents pump from running on boot</td></tr>
+          <tr><td>Manual bypass switch</td><td>If the entire board is destroyed by lightning, water supply is not cut off</td></tr>
+        </tbody>
+      </table>
+
+      <div class="insight-card">
+        <h3>Key Insight</h3>
+        <p>"Real-world control systems fail from physics, not just code — snubbers, debounce, and watchdogs are not optional. They're the difference between a project that survives a week and one that runs for years."</p>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">Built by Purvesh Mandawkar — ENTC, SCE Pune</footer>
+</body>
+</html>

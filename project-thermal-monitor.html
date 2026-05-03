@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Autonomous Thermal Monitor — Purvesh Mandawkar</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&family=IBM+Plex+Mono:wght@400;500&family=Syne:wght@400;700&display=swap" rel="stylesheet" />
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    :root { --bg: #ffffff; --bg2: #f7f7f5; --card: #ffffff; --accent: #18794e; --accent-light: #e8f5ee; --text: #111111; --muted: #6b7280; --border: #e4e4e0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: "DM Sans", sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
+    .top-accent { position: fixed; top: 0; left: 0; width: 100%; height: 3px; background: var(--accent); z-index: 1200; pointer-events: none; }
+    nav { position: fixed; top: 3px; left: 0; width: 100%; padding: 1rem 3rem; background: #ffffff; border-bottom: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; z-index: 1100; }
+    .nav-logo { font-family: "IBM Plex Mono", monospace; color: var(--accent); text-decoration: none; font-size: 0.88rem; }
+    .nav-links { display: flex; gap: 1.3rem; }
+    .nav-links a { font-size: 0.88rem; color: var(--muted); text-decoration: none; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--text); }
+    .page-wrap { width: min(780px, 100%); margin: 0 auto; padding: 7rem 2rem 5rem; }
+    .back-link { display: inline-flex; align-items: center; gap: 0.4rem; font-family: "IBM Plex Mono", monospace; font-size: 0.75rem; color: var(--muted); text-decoration: none; margin-bottom: 2.5rem; transition: color 0.2s; }
+    .back-link:hover { color: var(--accent); }
+    .project-header { margin-bottom: 3rem; }
+    .project-tag { font-family: "IBM Plex Mono", monospace; font-size: 0.7rem; color: var(--accent); text-transform: uppercase; letter-spacing: 0.15em; display: inline-flex; align-items: center; gap: 0.5rem; margin-bottom: 1rem; }
+    .project-tag::before { content: ""; width: 20px; height: 1px; background: var(--accent); }
+    h1 { font-family: "Syne", sans-serif; font-weight: 700; font-size: clamp(1.8rem, 4vw, 2.6rem); line-height: 1.2; letter-spacing: -0.02em; margin-bottom: 1rem; }
+    .project-summary { font-size: 1.05rem; color: var(--muted); max-width: 620px; line-height: 1.75; margin-bottom: 1.5rem; }
+    .tag-row { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+    .tag { background: var(--accent-light); color: var(--accent); font-family: "IBM Plex Mono", monospace; font-size: 0.7rem; padding: 0.28rem 0.55rem; border: 1px solid #c3e6d4; }
+    .divider { height: 1px; background: var(--border); margin: 2.5rem 0; }
+    h2 { font-family: "Syne", sans-serif; font-weight: 700; font-size: 1.25rem; margin-bottom: 1rem; color: var(--text); }
+    p { color: var(--muted); line-height: 1.8; margin-bottom: 1rem; }
+    p:last-child { margin-bottom: 0; }
+    .alert-tiers { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin: 1.25rem 0; }
+    .tier { padding: 1.25rem; border: 1px solid var(--border); text-align: center; }
+    .tier-icon { font-size: 1.5rem; margin-bottom: 0.5rem; }
+    .tier-label { font-family: "IBM Plex Mono", monospace; font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.4rem; }
+    .tier-range { font-family: "Syne", sans-serif; font-size: 1.1rem; font-weight: 700; }
+    .tier.normal { border-top: 3px solid #16a34a; }
+    .tier.normal .tier-label { color: #16a34a; }
+    .tier.warning { border-top: 3px solid #d97706; }
+    .tier.warning .tier-label { color: #d97706; }
+    .tier.critical { border-top: 3px solid #dc2626; }
+    .tier.critical .tier-label { color: #dc2626; }
+    .component-table { width: 100%; border-collapse: collapse; margin: 1.25rem 0; font-size: 0.87rem; }
+    .component-table th { font-family: "IBM Plex Mono", monospace; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.08em; background: var(--bg2); color: var(--muted); padding: 0.6rem 0.8rem; text-align: left; border: 1px solid var(--border); }
+    .component-table td { padding: 0.65rem 0.8rem; border: 1px solid var(--border); color: var(--muted); vertical-align: top; }
+    .component-table td:first-child { color: var(--text); font-weight: 500; }
+    .code-block { background: #0f1117; padding: 1.5rem; overflow-x: auto; margin: 1.25rem 0; border: 1px solid #2d2d2d; }
+    .code-block pre { font-family: "IBM Plex Mono", monospace; font-size: 0.78rem; color: #e2e8f0; line-height: 1.7; white-space: pre; }
+    .code-label { font-family: "IBM Plex Mono", monospace; font-size: 0.68rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.5rem; }
+    .insight-card { background: var(--bg2); border: 1px solid var(--border); border-top: 2px solid var(--accent); padding: 1.25rem 1.5rem; margin-top: 2rem; }
+    .insight-card h3 { font-family: "IBM Plex Mono", monospace; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--accent); margin-bottom: 0.6rem; }
+    .insight-card p { color: var(--text); font-style: italic; margin-bottom: 0; }
+    .site-footer { background: var(--bg2); border-top: 1px solid var(--border); text-align: center; padding: 2rem; font-family: "IBM Plex Mono", monospace; color: var(--muted); font-size: 0.72rem; }
+    @media (max-width: 640px) {
+      nav { padding: 0.75rem 1rem; }
+      .nav-links { gap: 0.75rem; overflow-x: auto; }
+      .nav-links a { white-space: nowrap; font-size: 0.8rem; }
+      .page-wrap { padding: 5.5rem 1.25rem 4rem; }
+      .alert-tiers { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <div class="top-accent" aria-hidden="true"></div>
+  <header>
+    <nav>
+      <a class="nav-logo" href="index.html">PM.dev</a>
+      <div class="nav-links">
+        <a href="index.html#projects">Projects</a>
+        <a href="index.html#skills">Skills</a>
+        <a href="index.html#contact">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <div class="page-wrap">
+      <a class="back-link" href="index.html#projects">← Back to Projects</a>
+
+      <div class="project-header">
+        <p class="project-tag">Industrial Safety · Bare-metal Embedded</p>
+        <h1>Autonomous Thermal Monitor &amp; Alert System</h1>
+        <p class="project-summary">
+          A standalone, battery-powered thermal safety device for industrial environments. Runs entirely on bare-metal ATmega firmware — no Arduino library dependency — with a three-tier alert architecture and cumulative alarm logic.
+        </p>
+        <div class="tag-row">
+          <span class="tag">Bare-metal Firmware</span>
+          <span class="tag">Analog Sensing</span>
+          <span class="tag">Battery Optimization</span>
+          <span class="tag">Standalone Embedded</span>
+          <span class="tag">ATmega8A</span>
+        </div>
+      </div>
+
+      <div class="divider"></div>
+
+      <h2>Three-Tier Alert Architecture</h2>
+      <p>Unlike a simple ON/OFF alarm, this system uses cumulative alerting — the warning state stays active even when the critical state is triggered, giving operators a visual history of thermal escalation.</p>
+
+      <div class="alert-tiers">
+        <div class="tier normal">
+          <div class="tier-icon">🟢</div>
+          <div class="tier-label">Zone 1 — Normal</div>
+          <div class="tier-range">&lt; 60°C</div>
+          <p style="font-size:0.8rem; margin-top:0.5rem; color: var(--muted);">Green LED only. System healthy.</p>
+        </div>
+        <div class="tier warning">
+          <div class="tier-icon">🟡</div>
+          <div class="tier-label">Zone 2 — Warning</div>
+          <div class="tier-range">60–70°C</div>
+          <p style="font-size:0.8rem; margin-top:0.5rem; color: var(--muted);">Yellow LED. No buzzer yet.</p>
+        </div>
+        <div class="tier critical">
+          <div class="tier-icon">🔴</div>
+          <div class="tier-label">Zone 3 — Critical</div>
+          <div class="tier-range">&gt; 70°C</div>
+          <p style="font-size:0.8rem; margin-top:0.5rem; color: var(--muted);">Yellow latched + Red pulsing + Buzzer.</p>
+        </div>
+      </div>
+
+      <p>The yellow LED latches in the critical zone — it stays ON even as the red alert triggers. This tells the operator: the system passed through the warning zone before reaching critical. Standard alarms don't preserve this history.</p>
+
+      <div class="divider"></div>
+
+      <h2>Components</h2>
+      <table class="component-table">
+        <thead><tr><th>Component</th><th>Specification &amp; Role</th></tr></thead>
+        <tbody>
+          <tr><td>ATmega8A MCU</td><td>8-bit microcontroller running on internal 8MHz RC oscillator — no external crystal needed, reduces failure points</td></tr>
+          <tr><td>LM35 Temperature Sensor</td><td>Precision linear sensor — outputs 10mV/°C, directly readable by ADC without signal conditioning</td></tr>
+          <tr><td>Green LED</td><td>Zone 1 indicator — system health / normal operation</td></tr>
+          <tr><td>Yellow LED</td><td>Zone 2 indicator — caution state, latches ON in Zone 3</td></tr>
+          <tr><td>Piezo Buzzer</td><td>Audible alert — pulsed at 100ms intervals in critical zone</td></tr>
+          <tr><td>3.7V Li-ion Battery</td><td>Portable power source — decoupling capacitor (0.1µF) suppresses noise from buzzer inductive load</td></tr>
+        </tbody>
+      </table>
+
+      <div class="divider"></div>
+
+      <h2>Going Standalone — The Key Challenge</h2>
+      <p>The original prototype ran on an Arduino Uno. To transition to a portable standalone device, two hardware changes were required:</p>
+      <p><strong>1. Internal clock:</strong> The ATmega8A was reconfigured to use its internal 8MHz RC oscillator instead of an external crystal. This eliminates a mechanical component that can fail and reduces current draw for battery life.</p>
+      <p><strong>2. Noise suppression:</strong> When the buzzer triggered, its inductive load caused voltage sags that reset the microcontroller. This was fixed with a 0.1µF decoupling capacitor directly across the IC power pins and a star-grounding layout — all ground connections meet at a single point to prevent ground loops.</p>
+
+      <div class="divider"></div>
+
+      <h2>Source Code</h2>
+      <p class="code-label">Thermal Monitor Firmware — Cumulative alert logic</p>
+      <div class="code-block">
+        <pre>const int tempPin   = A0;  // LM35 analog input (Physical Pin 23)
+const int greenLed  = 8;   // Normal state (Physical Pin 14)
+const int yellowLed = 2;   // Warning state (Physical Pin 4)
+const int alertPin  = 0;   // Critical alert + buzzer (Physical Pin 2)
+
+const int warnLimit  = 60; // °C — Yellow activates
+const int alertLimit = 70; // °C — Red + Buzzer activates
+
+void setup() {
+  pinMode(greenLed,  OUTPUT);
+  pinMode(yellowLed, OUTPUT);
+  pinMode(alertPin,  OUTPUT);
+}
+
+void loop() {
+  int reading = analogRead(tempPin);
+  // LM35: 10mV/°C, ADC reference 5V, 10-bit resolution
+  // temperature = (reading * 500) / 1023
+
+  if (reading &gt;= alertLimit) {
+    // ZONE 3: CRITICAL — yellow latches, red pulses with buzzer
+    digitalWrite(greenLed,  LOW);
+    digitalWrite(yellowLed, HIGH);  // Latched: shows warning was passed
+
+    // Pulsed alert — 100ms ON / 100ms OFF
+    digitalWrite(alertPin, HIGH);
+    delay(100);
+    digitalWrite(alertPin, LOW);
+    delay(100);
+
+  } else if (reading &gt;= warnLimit) {
+    // ZONE 2: WARNING — yellow only, no audible alarm yet
+    digitalWrite(greenLed,  LOW);
+    digitalWrite(yellowLed, HIGH);
+    digitalWrite(alertPin,  LOW);
+
+  } else {
+    // ZONE 1: NORMAL — green only, all alerts off
+    digitalWrite(greenLed,  HIGH);
+    digitalWrite(yellowLed, LOW);
+    digitalWrite(alertPin,  LOW);
+  }
+}</pre>
+      </div>
+
+      <div class="divider"></div>
+
+      <h2>Engineering Challenges Solved</h2>
+      <table class="component-table">
+        <thead><tr><th>Problem</th><th>Solution</th></tr></thead>
+        <tbody>
+          <tr><td>Buzzer causing MCU resets</td><td>0.1µF decoupling capacitor across VCC/GND pins absorbs voltage sags from inductive buzzer load</td></tr>
+          <tr><td>Ground loops causing noise</td><td>Star-grounding technique — all grounds meet at single point, preventing noise coupling between circuits</td></tr>
+          <tr><td>Arduino dependency</td><td>Reconfigured ATmega8A to use internal oscillator — runs as fully standalone chip, no bootloader required</td></tr>
+          <tr><td>Simple ON/OFF alarms lose context</td><td>Cumulative alerting latches yellow LED in critical zone — operator knows the warning stage was crossed</td></tr>
+        </tbody>
+      </table>
+
+      <div class="insight-card">
+        <h3>Key Insight</h3>
+        <p>"Transitioning from a prototype to a standalone device taught me that noise is a real hardware problem, not just theory. A buzzer resetting a microcontroller is fixed with a capacitor, not more code."</p>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">Built by Purvesh Mandawkar — ENTC, SCE Pune</footer>
+</body>
+</html>

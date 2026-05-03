@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Automated Soil Irrigation System — Purvesh Mandawkar</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&family=IBM+Plex+Mono:wght@400;500&family=Syne:wght@400;700&display=swap" rel="stylesheet" />
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    :root { --bg: #ffffff; --bg2: #f7f7f5; --card: #ffffff; --accent: #18794e; --accent-light: #e8f5ee; --text: #111111; --muted: #6b7280; --border: #e4e4e0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: "DM Sans", sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
+    .top-accent { position: fixed; top: 0; left: 0; width: 100%; height: 3px; background: var(--accent); z-index: 1200; pointer-events: none; }
+    nav { position: fixed; top: 3px; left: 0; width: 100%; padding: 1rem 3rem; background: #ffffff; border-bottom: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; z-index: 1100; }
+    .nav-logo { font-family: "IBM Plex Mono", monospace; color: var(--accent); text-decoration: none; font-size: 0.88rem; }
+    .nav-links { display: flex; gap: 1.3rem; }
+    .nav-links a { font-size: 0.88rem; color: var(--muted); text-decoration: none; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--text); }
+    .page-wrap { width: min(780px, 100%); margin: 0 auto; padding: 7rem 2rem 5rem; }
+    .back-link { display: inline-flex; align-items: center; gap: 0.4rem; font-family: "IBM Plex Mono", monospace; font-size: 0.75rem; color: var(--muted); text-decoration: none; margin-bottom: 2.5rem; transition: color 0.2s; }
+    .back-link:hover { color: var(--accent); }
+    .project-header { margin-bottom: 3rem; }
+    .project-tag { font-family: "IBM Plex Mono", monospace; font-size: 0.7rem; color: var(--accent); text-transform: uppercase; letter-spacing: 0.15em; display: inline-flex; align-items: center; gap: 0.5rem; margin-bottom: 1rem; }
+    .project-tag::before { content: ""; width: 20px; height: 1px; background: var(--accent); }
+    h1 { font-family: "Syne", sans-serif; font-weight: 700; font-size: clamp(1.8rem, 4vw, 2.6rem); line-height: 1.2; letter-spacing: -0.02em; margin-bottom: 1rem; }
+    .project-summary { font-size: 1.05rem; color: var(--muted); max-width: 620px; line-height: 1.75; margin-bottom: 1.5rem; }
+    .tag-row { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+    .tag { background: var(--accent-light); color: var(--accent); font-family: "IBM Plex Mono", monospace; font-size: 0.7rem; padding: 0.28rem 0.55rem; border: 1px solid #c3e6d4; }
+    .divider { height: 1px; background: var(--border); margin: 2.5rem 0; }
+    h2 { font-family: "Syne", sans-serif; font-weight: 700; font-size: 1.25rem; margin-bottom: 1rem; color: var(--text); }
+    p { color: var(--muted); line-height: 1.8; margin-bottom: 1rem; }
+    p:last-child { margin-bottom: 0; }
+    .component-table { width: 100%; border-collapse: collapse; margin: 1.25rem 0; font-size: 0.87rem; }
+    .component-table th { font-family: "IBM Plex Mono", monospace; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.08em; background: var(--bg2); color: var(--muted); padding: 0.6rem 0.8rem; text-align: left; border: 1px solid var(--border); }
+    .component-table td { padding: 0.65rem 0.8rem; border: 1px solid var(--border); color: var(--muted); vertical-align: top; }
+    .component-table td:first-child { color: var(--text); font-weight: 500; }
+    .code-block { background: #0f1117; padding: 1.5rem; overflow-x: auto; margin: 1.25rem 0; border: 1px solid #2d2d2d; }
+    .code-block pre { font-family: "IBM Plex Mono", monospace; font-size: 0.78rem; color: #e2e8f0; line-height: 1.7; white-space: pre; }
+    .code-label { font-family: "IBM Plex Mono", monospace; font-size: 0.68rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.5rem; }
+    .insight-card { background: var(--bg2); border: 1px solid var(--border); border-top: 2px solid var(--accent); padding: 1.25rem 1.5rem; margin-top: 2rem; }
+    .insight-card h3 { font-family: "IBM Plex Mono", monospace; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--accent); margin-bottom: 0.6rem; }
+    .insight-card p { color: var(--text); font-style: italic; margin-bottom: 0; }
+    .hysteresis-visual { background: var(--bg2); border: 1px solid var(--border); padding: 1.5rem; margin: 1.25rem 0; }
+    .hysteresis-visual h3 { font-family: "IBM Plex Mono", monospace; font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--muted); margin-bottom: 1rem; }
+    .h-bar { display: flex; align-items: center; gap: 1rem; margin-bottom: 0.75rem; font-family: "IBM Plex Mono", monospace; font-size: 0.78rem; }
+    .h-label { width: 80px; color: var(--muted); text-align: right; }
+    .h-track { flex: 1; height: 8px; background: var(--border); position: relative; }
+    .h-fill { height: 100%; background: var(--accent); }
+    .h-value { width: 40px; color: var(--text); }
+    .site-footer { background: var(--bg2); border-top: 1px solid var(--border); text-align: center; padding: 2rem; font-family: "IBM Plex Mono", monospace; color: var(--muted); font-size: 0.72rem; }
+    @media (max-width: 640px) {
+      nav { padding: 0.75rem 1rem; }
+      .nav-links { gap: 0.75rem; overflow-x: auto; }
+      .nav-links a { white-space: nowrap; font-size: 0.8rem; }
+      .page-wrap { padding: 5.5rem 1.25rem 4rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="top-accent" aria-hidden="true"></div>
+  <header>
+    <nav>
+      <a class="nav-logo" href="index.html">PM.dev</a>
+      <div class="nav-links">
+        <a href="index.html#projects">Projects</a>
+        <a href="index.html#skills">Skills</a>
+        <a href="index.html#contact">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <div class="page-wrap">
+      <a class="back-link" href="index.html#projects">← Back to Projects</a>
+
+      <div class="project-header">
+        <p class="project-tag">Agricultural Automation · Embedded Control</p>
+        <h1>Automated Soil Irrigation System</h1>
+        <p class="project-summary">
+          A closed-loop irrigation system that reads soil moisture in real time and controls a water pump through hysteresis logic — preventing both over-watering and the relay chatter that destroys simpler threshold-based designs.
+        </p>
+        <div class="tag-row">
+          <span class="tag">Capacitive Sensing</span>
+          <span class="tag">Hysteresis Control</span>
+          <span class="tag">Relay Actuation</span>
+          <span class="tag">Embedded Firmware</span>
+          <span class="tag">Embedded C</span>
+        </div>
+      </div>
+
+      <div class="divider"></div>
+
+      <h2>The Problem with Simple Threshold Control</h2>
+      <p>Most beginner irrigation projects use a single moisture threshold: pump ON below 50%, pump OFF above 50%. This causes rapid relay switching when moisture hovers near the threshold — the pump flickers ON and OFF continuously, burning out the relay and motor within weeks.</p>
+      <p>The solution is hysteresis — two separate thresholds with a buffer zone between them.</p>
+
+      <div class="hysteresis-visual">
+        <h3>Hysteresis Logic — How it works</h3>
+        <div class="h-bar">
+          <span class="h-label">Pump ON</span>
+          <div class="h-track"><div class="h-fill" style="width:30%"></div></div>
+          <span class="h-value">≤ 30%</span>
+        </div>
+        <div class="h-bar">
+          <span class="h-label">Buffer</span>
+          <div class="h-track"><div class="h-fill" style="width:70%; background: #c3e6d4"></div></div>
+          <span class="h-value">30–70%</span>
+        </div>
+        <div class="h-bar">
+          <span class="h-label">Pump OFF</span>
+          <div class="h-track"><div class="h-fill" style="width:100%"></div></div>
+          <span class="h-value">≥ 70%</span>
+        </div>
+      </div>
+
+      <p>The 40% buffer zone means the pump never switches ON and OFF rapidly. Once ON, it stays ON until moisture reaches 70%. Once OFF, it stays OFF until moisture drops to 30%. This protects both the relay and the motor.</p>
+
+      <div class="divider"></div>
+
+      <h2>Components</h2>
+      <table class="component-table">
+        <thead><tr><th>Component</th><th>Role</th></tr></thead>
+        <tbody>
+          <tr><td>IoT Development Board</td><td>Main controller — reads ADC, runs hysteresis logic, drives relay</td></tr>
+          <tr><td>Capacitive Soil Sensor</td><td>Measures moisture via capacitance change — corrosion-resistant unlike resistive sensors</td></tr>
+          <tr><td>5V Relay Module</td><td>Electrically isolates the low-power control logic from the high-power pump</td></tr>
+          <tr><td>DC Submersible Pump</td><td>Moves water from reservoir to soil when triggered</td></tr>
+        </tbody>
+      </table>
+
+      <p><strong>Why capacitive over resistive sensors?</strong> Resistive sensors pass current through the soil — this causes electrolysis, which corrodes the sensor probes within weeks. Capacitive sensors measure dielectric change without direct current flow, so they last far longer in damp soil.</p>
+
+      <div class="divider"></div>
+
+      <h2>Source Code</h2>
+      <p class="code-label">Irrigation Firmware — Calibrated ADC + Hysteresis Control</p>
+      <div class="code-block">
+        <pre>#define MOISTURE_PIN  34
+#define RELAY_PIN     25
+
+// Calibrated sensor range (measured in dry air and submerged)
+const int DRY_VAL  = 3500;  // Raw ADC reading in dry air
+const int WET_VAL  = 1500;  // Raw ADC reading fully submerged
+
+// Hysteresis thresholds
+const int MIN_THRES = 30;   // Pump ON  below this
+const int MAX_THRES = 70;   // Pump OFF above this
+
+void setup() {
+  Serial.begin(115200);
+  pinMode(RELAY_PIN, OUTPUT);
+  digitalWrite(RELAY_PIN, HIGH);  // Start with pump OFF (active low)
+}
+
+void loop() {
+  int raw = analogRead(MOISTURE_PIN);
+
+  // Map raw ADC value to 0–100% using calibrated endpoints
+  int moisture = map(raw, DRY_VAL, WET_VAL, 0, 100);
+  moisture = constrain(moisture, 0, 100);  // Clamp to valid range
+
+  // Hysteresis logic — prevents relay chatter
+  if (moisture &lt;= MIN_THRES) {
+    digitalWrite(RELAY_PIN, LOW);   // Pump ON — soil is dry
+  } else if (moisture &gt;= MAX_THRES) {
+    digitalWrite(RELAY_PIN, HIGH);  // Pump OFF — soil is wet enough
+  }
+  // Between 30–70%: do nothing — pump stays in its current state
+
+  Serial.printf("Moisture: %d%%\n", moisture);
+  delay(1000);
+}</pre>
+      </div>
+
+      <div class="divider"></div>
+
+      <h2>Engineering Details</h2>
+      <table class="component-table">
+        <thead><tr><th>Concept</th><th>Implementation</th></tr></thead>
+        <tbody>
+          <tr><td>Sensor Calibration</td><td>Every soil type has different conductivity. The map() function translates raw ADC voltage into a human-readable percentage using measured dry and wet endpoints</td></tr>
+          <tr><td>Active-low Relay</td><td>Relay starts HIGH (OFF) on boot — safe default prevents pump from running on power-up</td></tr>
+          <tr><td>Hysteresis Buffer</td><td>40% gap between ON and OFF thresholds eliminates rapid switching and extends relay and pump lifespan</td></tr>
+          <tr><td>constrain()</td><td>Clamps the mapped value to 0–100% range — prevents out-of-range sensor readings from triggering incorrect behavior</td></tr>
+        </tbody>
+      </table>
+
+      <div class="insight-card">
+        <h3>Key Insight</h3>
+        <p>"Hysteresis logic — not simple thresholds — is what separates reliable control from a relay that fails in a week. The 40% buffer zone is the entire difference between a project and a product."</p>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">Built by Purvesh Mandawkar — ENTC, SCE Pune</footer>
+</body>
+</html>

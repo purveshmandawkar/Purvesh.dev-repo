@@ -665,6 +665,23 @@
       transform: scale(1.04);
     }
 
+    .project-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.72rem;
+      color: var(--accent);
+      text-decoration: none;
+      margin-top: 0.9rem;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.2s ease;
+    }
+
+    .project-link:hover {
+      border-bottom-color: var(--accent);
+    }
+
     @media (max-width: 640px) {
       nav {
         padding: 0.75rem 1rem;
@@ -811,36 +828,112 @@
       <p class="section-label">Projects</p>
       <h2 class="section-title">Projects</h2>
       <div class="projects-grid">
+
         <article class="project-card done">
           <div class="project-top">
-            <h3 class="project-name">ECG &amp; Heart Rate Monitor</h3>
+            <h3 class="project-name">Fail-Safe 220V AC Pump Controller</h3>
             <span class="project-status done">DONE</span>
           </div>
           <p class="project-desc">
-            Captures bio-signals from skin, processes noisy analog ECG data, and displays heart rate.
+            Industrial-grade control system for a 1HP water pump. Handles inrush surge, water turbulence filtering, and microcontroller freeze — with a hardware watchdog fail-safe and manual bypass for zero-downtime operation.
           </p>
           <ul class="project-tech">
-            <li>AD8232</li>
-            <li>ESP32</li>
-            <li>Analog Signal Chain</li>
+            <li>Power Electronics</li>
+            <li>Real-time Firmware</li>
+            <li>Watchdog Timer</li>
+            <li>Relay Control</li>
+            <li>Fail-safe Design</li>
           </ul>
-          <p class="project-insight">Key insight: stable filtering is everything when dealing with micro-volt ECG noise.</p>
+          <p class="project-insight">Key insight: real-world control systems fail from physics, not just code — snubbers, debounce, and watchdogs are not optional.</p>
+          <a class="project-link" href="project-pump-controller.html">View Full Details →</a>
         </article>
 
         <article class="project-card done">
           <div class="project-top">
-            <h3 class="project-name">Water Pump Automation</h3>
+            <h3 class="project-name">IoT ECG &amp; Heart Rate Monitor</h3>
             <span class="project-status done">DONE</span>
           </div>
           <p class="project-desc">
-            Automatically switches pump ON/OFF by water level with reliable relay-based control logic.
+            Portable ECG system that captures bio-electrical signals from the body, conditions them through an analog front-end, and streams real-time heart rate to a mobile dashboard over Wi-Fi.
           </p>
           <ul class="project-tech">
-            <li>Float Switch</li>
-            <li>Relay</li>
-            <li>ESP32</li>
+            <li>Analog Signal Chain</li>
+            <li>IoT Platform</li>
+            <li>Edge Processing</li>
+            <li>Biopotential Sensing</li>
           </ul>
-          <p class="project-insight">Key insight: simple fail-safe logic prevents most real-world control failures.</p>
+          <p class="project-insight">Key insight: stable filtering is everything when dealing with microvolt-level bio-signals in a noisy environment.</p>
+          <a class="project-link" href="project-ecg-monitor.html">View Full Details →</a>
+        </article>
+
+        <article class="project-card done">
+          <div class="project-top">
+            <h3 class="project-name">Automated Soil Irrigation System</h3>
+            <span class="project-status done">DONE</span>
+          </div>
+          <p class="project-desc">
+            Closed-loop irrigation system that reads soil moisture and drives a water pump through hysteresis logic — preventing both over-watering and sensor-induced pump chatter.
+          </p>
+          <ul class="project-tech">
+            <li>Capacitive Sensing</li>
+            <li>Hysteresis Control</li>
+            <li>Relay Actuation</li>
+            <li>Embedded Firmware</li>
+          </ul>
+          <p class="project-insight">Key insight: hysteresis logic — not simple thresholds — is what separates reliable control from a flapping relay.</p>
+          <a class="project-link" href="project-soil-irrigation.html">View Full Details →</a>
+        </article>
+
+        <article class="project-card done">
+          <div class="project-top">
+            <h3 class="project-name">Autonomous Thermal Monitor &amp; Alert System</h3>
+            <span class="project-status done">DONE</span>
+          </div>
+          <p class="project-desc">
+            Standalone battery-powered safety device for critical environments. Three-tier alert architecture with cumulative visual and audible alarms — runs entirely on bare-metal ATmega firmware without an Arduino dependency.
+          </p>
+          <ul class="project-tech">
+            <li>Bare-metal Firmware</li>
+            <li>Analog Sensing</li>
+            <li>Battery Optimization</li>
+            <li>Standalone Embedded</li>
+          </ul>
+          <p class="project-insight">Key insight: transitioning from prototyping to standalone required star-grounding and decoupling — noise is a real hardware problem, not just theory.</p>
+          <a class="project-link" href="project-thermal-monitor.html">View Full Details →</a>
+        </article>
+
+        <article class="project-card in-progress">
+          <div class="project-top">
+            <h3 class="project-name">AI Voice Chatbot — Edge Hardware</h3>
+            <span class="project-status in-progress">IN PROGRESS</span>
+          </div>
+          <p class="project-desc">
+            Building an Alexa-like voice assistant on edge hardware — full voice pipeline from microphone capture to on-device inference, no cloud dependency.
+          </p>
+          <ul class="project-tech">
+            <li>Edge AI</li>
+            <li>Voice Pipeline</li>
+            <li>Memory Optimization</li>
+            <li>IoT Development Board</li>
+          </ul>
+          <p class="project-insight">Key insight: memory optimization is the core constraint for on-device voice — every byte matters.</p>
+        </article>
+
+        <article class="project-card in-progress">
+          <div class="project-top">
+            <h3 class="project-name">Industrial Farming Pump Automation</h3>
+            <span class="project-status in-progress">IN PROGRESS</span>
+          </div>
+          <p class="project-desc">
+            Multi-pump agricultural control system with field condition monitoring, designed for real farm environments where reliability and fault tolerance are non-negotiable.
+          </p>
+          <ul class="project-tech">
+            <li>Industrial Control</li>
+            <li>Multi-actuator Logic</li>
+            <li>Field Monitoring</li>
+            <li>Fault Tolerance</li>
+          </ul>
+          <p class="project-insight">Key insight: industrial reliability means designing for when things go wrong, not just when they go right.</p>
         </article>
 
         <article class="project-card done">
@@ -848,27 +941,27 @@
             <h3 class="project-name">Home Automation</h3>
             <span class="project-status done">DONE</span>
           </div>
-          <p class="project-desc">WiFi-based control of home appliances directly from a mobile phone app.</p>
+          <p class="project-desc">Wi-Fi based control of home appliances from a mobile app — built around reliable connection handling and low-latency response.</p>
           <ul class="project-tech">
-            <li>ESP32</li>
-            <li>Blynk</li>
-            <li>WiFi Control</li>
+            <li>IoT Platform</li>
+            <li>Wi-Fi Control</li>
+            <li>Relay Switching</li>
           </ul>
           <p class="project-insight">Key insight: latency and connection reliability matter more than feature count.</p>
         </article>
 
         <article class="project-card done">
           <div class="project-top">
-            <h3 class="project-name">Water Level Controller</h3>
+            <h3 class="project-name">Water Pump Automation</h3>
             <span class="project-status done">DONE</span>
           </div>
-          <p class="project-desc">Monitors tank water levels and triggers indicator alerts for quick action.</p>
+          <p class="project-desc">Float switch-based pump control with reliable relay logic and dry-run protection.</p>
           <ul class="project-tech">
-            <li>Water Level Sensor</li>
-            <li>Indicator Output</li>
-            <li>Monitoring Logic</li>
+            <li>Level Sensing</li>
+            <li>Relay Control</li>
+            <li>Fail-safe Logic</li>
           </ul>
-          <p class="project-insight">Key insight: clear, readable indicators are critical in utility-focused hardware.</p>
+          <p class="project-insight">Key insight: simple fail-safe logic prevents most real-world control failures.</p>
         </article>
 
         <article class="project-card done">
@@ -876,46 +969,29 @@
             <h3 class="project-name">Automatic Sprinkler System</h3>
             <span class="project-status done">DONE</span>
           </div>
-          <p class="project-desc">Auto-irrigates crops based on real-time soil moisture conditions.</p>
+          <p class="project-desc">Soil moisture-triggered irrigation with calibrated thresholds for water efficiency and crop health.</p>
           <ul class="project-tech">
-            <li>Soil Moisture Sensor</li>
-            <li>Relay</li>
+            <li>Capacitive Sensing</li>
+            <li>Threshold Control</li>
             <li>Automation Logic</li>
           </ul>
-          <p class="project-insight">Key insight: moisture threshold tuning decides water savings and crop health.</p>
+          <p class="project-insight">Key insight: threshold calibration decides water savings — wrong values waste more than manual watering.</p>
         </article>
 
-        <article class="project-card in-progress">
+        <article class="project-card done">
           <div class="project-top">
-            <h3 class="project-name">AI Voice Chatbot (ESP32-S3)</h3>
-            <span class="project-status in-progress">IN PROGRESS</span>
+            <h3 class="project-name">Water Level Controller</h3>
+            <span class="project-status done">DONE</span>
           </div>
-          <p class="project-desc">
-            Building an Alexa-like voice assistant on edge hardware using ESP32-S3 for PSRAM and processing power.
-          </p>
+          <p class="project-desc">Real-time tank level monitoring with tiered indicator outputs for immediate visual status.</p>
           <ul class="project-tech">
-            <li>ESP32-S3</li>
-            <li>Edge AI</li>
-            <li>Voice Pipeline</li>
+            <li>Level Sensing</li>
+            <li>Indicator Logic</li>
+            <li>Embedded Firmware</li>
           </ul>
-          <p class="project-insight">Key insight: memory optimization is the core challenge for on-device voice systems.</p>
+          <p class="project-insight">Key insight: clear, readable indicators are critical in utility-focused hardware.</p>
         </article>
 
-        <article class="project-card in-progress">
-          <div class="project-top">
-            <h3 class="project-name">Farming Pump Automation (Industrial)</h3>
-            <span class="project-status in-progress">IN PROGRESS</span>
-          </div>
-          <p class="project-desc">
-            Industrial-scale agricultural pump control with multi-pump logic and field condition monitoring.
-          </p>
-          <ul class="project-tech">
-            <li>Industrial Control</li>
-            <li>Multi-Pump Logic</li>
-            <li>Field Monitoring</li>
-          </ul>
-          <p class="project-insight">Key insight: industrial reliability depends on robust control states and fallback behavior.</p>
-        </article>
       </div>
     </section>
 
@@ -924,37 +1000,39 @@
       <h2 class="section-title">Skills</h2>
       <div class="skills-grid">
         <article class="skill-card">
-          <h3 class="skill-category">Microcontrollers</h3>
+          <h3 class="skill-category">Embedded Development</h3>
           <ul class="skill-tags">
-            <li>Arduino</li>
-            <li>ESP32</li>
-            <li>ESP32-S3</li>
+            <li>IoT Development Boards</li>
+            <li>Bare-metal Firmware</li>
+            <li>Real-time Control</li>
+            <li>State Machines</li>
           </ul>
         </article>
         <article class="skill-card">
-          <h3 class="skill-category">Programming</h3>
+          <h3 class="skill-category">Firmware & Programming</h3>
           <ul class="skill-tags">
             <li>Embedded C</li>
-            <li>Logic Building</li>
+            <li>C++ (Arduino Framework)</li>
+            <li>Interrupt Handling</li>
+            <li>Watchdog Timers</li>
           </ul>
         </article>
         <article class="skill-card">
-          <h3 class="skill-category">PCB &amp; Circuit Design</h3>
+          <h3 class="skill-category">PCB & Circuit Design</h3>
           <ul class="skill-tags">
-            <li>KiCad</li>
             <li>Schematic Design</li>
             <li>PCB Layout</li>
+            <li>KiCad</li>
             <li>Soldering</li>
           </ul>
         </article>
         <article class="skill-card">
-          <h3 class="skill-category">Hardware</h3>
+          <h3 class="skill-category">Hardware Systems</h3>
           <ul class="skill-tags">
-            <li>Relay Modules</li>
-            <li>Sensors</li>
-            <li>Actuators</li>
-            <li>Signal Chains</li>
-            <li>Basic Electronics</li>
+            <li>Analog Signal Chain</li>
+            <li>Power Electronics</li>
+            <li>Sensor Integration</li>
+            <li>Relay & Actuator Control</li>
           </ul>
         </article>
       </div>
@@ -970,7 +1048,7 @@
         </p>
         <div class="about-stats">
           <article class="stat-card">
-            <p class="stat-number">5+</p>
+            <p class="stat-number">10+</p>
             <p class="stat-label">Projects Built</p>
           </article>
           <article class="stat-card">
