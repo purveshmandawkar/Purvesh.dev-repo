@@ -30,6 +30,9 @@
 
     html { scroll-behavior: smooth; }
 
+    /* Offset anchor scroll so fixed nav does not cover section headings */
+    section[id] { scroll-margin-top: 5rem; }
+
     body {
       font-family: "IBM Plex Sans", sans-serif;
       background: var(--bg);
