@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Resume — Purvesh Mandawkar</title>
+  <meta name="description" content="Skills, projects, and PDF resume — Purvesh Mandawkar." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500&family=Bebas+Neue&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="project-page.css" />
+  <style>
+    .resume-actions { display: flex; flex-wrap: wrap; gap: 0.75rem; margin: 1.25rem 0 2.5rem; }
+    .resume-actions a {
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      text-decoration: none;
+      padding: 0.65rem 1.2rem;
+      border: 1px solid;
+      display: inline-block;
+      transition: background 0.2s, color 0.2s, border-color 0.2s;
+    }
+    .resume-actions a.primary {
+      background: var(--accent);
+      border-color: var(--accent);
+      color: #000;
+    }
+    .resume-actions a.primary:hover { background: var(--accent2); border-color: var(--accent2); }
+    .resume-actions a.ghost {
+      background: transparent;
+      border-color: var(--border2);
+      color: var(--muted2);
+    }
+    .resume-actions a.ghost:hover { border-color: var(--accent); color: var(--accent); }
+    .resume-meta {
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.72rem;
+      color: var(--muted2);
+      margin-bottom: 0.5rem;
+    }
+    .resume-meta a { color: var(--accent); text-decoration: none; }
+    .resume-meta a:hover { text-decoration: underline; }
+    .skill-block { margin-bottom: 1.75rem; }
+    .skill-block h3 {
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.65rem;
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      margin-bottom: 0.5rem;
+    }
+    .skill-block p { margin: 0; font-size: 0.9rem; color: var(--muted2); line-height: 1.65; }
+    .proj-row {
+      border-bottom: 1px solid var(--border);
+      padding: 1rem 0;
+    }
+    .proj-row:last-of-type { border-bottom: none; }
+    .proj-name {
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 0.35rem;
+    }
+    .proj-row p { margin: 0 0 0.5rem; font-size: 0.86rem; }
+    .proj-row a {
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.68rem;
+      color: var(--accent);
+      text-decoration: none;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .proj-row a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <a class="nav-logo" href="index.html#hero">PM<span>.dev</span></a>
+      <div class="nav-links">
+        <a href="index.html#hero">Home</a>
+        <a href="index.html#freelance">Freelance</a>
+        <a href="index.html#projects">Projects</a>
+        <a href="index.html#contact">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <div class="page-wrap">
+      <a class="back-link" href="index.html#hero">← Home</a>
+
+      <p class="project-tag">Resume</p>
+      <h1>Purvesh Mandawkar</h1>
+      <p class="project-summary" style="margin-bottom:0.5rem">
+        Embedded systems · IoT · Industrial control · ENTC (2nd year), Sinhgad College of Engineering, Pune
+      </p>
+      <p class="resume-meta">
+        <a href="mailto:mandawkarpurvesh@gmail.com">Email</a>
+        · <a href="https://github.com/purveshmandawkar" target="_blank" rel="noopener">GitHub</a>
+        · <a href="https://www.linkedin.com/in/purvesh-mandawkar-790a9a1aa/" target="_blank" rel="noopener">LinkedIn</a>
+      </p>
+
+      <div class="resume-actions">
+        <a class="primary" href="files/resume.pdf" target="_blank" rel="noopener">Download PDF</a>
+        <a class="ghost" href="index.html#projects">Portfolio</a>
+      </div>
+
+      <div class="divider"></div>
+
+      <h2>Skills</h2>
+      <div class="skill-block">
+        <h3>Embedded</h3>
+        <p>ESP32 / Arduino, bare-metal firmware, real-time control, state machines, watchdog timers</p>
+      </div>
+      <div class="skill-block">
+        <h3>Firmware</h3>
+        <p>Embedded C, C++ (Arduino), interrupts, non-blocking logic</p>
+      </div>
+      <div class="skill-block">
+        <h3>PCB &amp; hardware</h3>
+        <p>KiCad, schematic &amp; layout, soldering, analog signal chain, power electronics, relays, fail-safe design</p>
+      </div>
+
+      <div class="divider"></div>
+
+      <h2>Projects</h2>
+      <div class="proj-row">
+        <div class="proj-name">Fail-safe 220V AC pump controller</div>
+        <p>1HP pump control: RC snubber, debounce, hardware watchdog, manual bypass.</p>
+        <a href="project-pump-controller.html">Details →</a>
+      </div>
+      <div class="proj-row">
+        <div class="proj-name">IoT ECG &amp; heart rate monitor</div>
+        <p>AD8232 front-end, Wi-Fi / Blynk dashboard.</p>
+        <a href="project-ecg-monitor.html">Details →</a>
+      </div>
+      <div class="proj-row">
+        <div class="proj-name">Automated soil irrigation</div>
+        <p>Capacitive sensing, hysteresis control, relay actuation.</p>
+        <a href="project-soil-irrigation.html">Details →</a>
+      </div>
+      <div class="proj-row">
+        <div class="proj-name">Autonomous thermal monitor</div>
+        <p>Bare-metal ATmega, tiered alerts, battery-powered.</p>
+        <a href="project-thermal-monitor.html">Details →</a>
+      </div>
+      <div class="proj-row">
+        <div class="proj-name">Edge AI voice (WIP)</div>
+        <p>On-device voice pipeline — in progress.</p>
+      </div>
+      <div class="proj-row">
+        <div class="proj-name">Industrial farming pump automation (WIP)</div>
+        <p>Multi-pump field control — in progress.</p>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <span>PM.dev</span>
+    <span>Purvesh Mandawkar — ENTC, SCE Pune</span>
+    <span style="color:var(--muted)">Built from scratch · 2025</span>
+  </footer>
+</body>
+</html>
