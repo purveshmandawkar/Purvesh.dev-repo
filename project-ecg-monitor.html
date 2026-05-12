@@ -4,70 +4,21 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>IoT ECG & Heart Rate Monitor — Purvesh Mandawkar</title>
+  <meta name="description" content="Portable ECG with AD8232 front-end and IoT streaming — Purvesh Mandawkar." />
+
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&family=IBM+Plex+Mono:wght@400;500&family=Syne:wght@400;700&display=swap" rel="stylesheet" />
-  <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    :root {
-      --bg: #ffffff; --bg2: #f7f7f5; --card: #ffffff;
-      --accent: #18794e; --accent-light: #e8f5ee;
-      --text: #111111; --muted: #6b7280; --border: #e4e4e0;
-    }
-    html { scroll-behavior: smooth; }
-    body { font-family: "DM Sans", sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
-    .top-accent { position: fixed; top: 0; left: 0; width: 100%; height: 3px; background: var(--accent); z-index: 1200; pointer-events: none; }
-    nav { position: fixed; top: 3px; left: 0; width: 100%; padding: 1rem 3rem; background: #ffffff; border-bottom: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; z-index: 1100; }
-    .nav-logo { font-family: "IBM Plex Mono", monospace; color: var(--accent); text-decoration: none; font-size: 0.88rem; }
-    .nav-links { display: flex; gap: 1.3rem; }
-    .nav-links a { font-size: 0.88rem; color: var(--muted); text-decoration: none; transition: color 0.2s; }
-    .nav-links a:hover { color: var(--text); }
-    .page-wrap { width: min(780px, 100%); margin: 0 auto; padding: 7rem 2rem 5rem; }
-    .back-link { display: inline-flex; align-items: center; gap: 0.4rem; font-family: "IBM Plex Mono", monospace; font-size: 0.75rem; color: var(--muted); text-decoration: none; margin-bottom: 2.5rem; transition: color 0.2s; }
-    .back-link:hover { color: var(--accent); }
-    .project-header { margin-bottom: 3rem; }
-    .project-tag { font-family: "IBM Plex Mono", monospace; font-size: 0.7rem; color: var(--accent); text-transform: uppercase; letter-spacing: 0.15em; display: inline-flex; align-items: center; gap: 0.5rem; margin-bottom: 1rem; }
-    .project-tag::before { content: ""; width: 20px; height: 1px; background: var(--accent); }
-    h1 { font-family: "Syne", sans-serif; font-weight: 700; font-size: clamp(1.8rem, 4vw, 2.6rem); line-height: 1.2; letter-spacing: -0.02em; margin-bottom: 1rem; }
-    .project-summary { font-size: 1.05rem; color: var(--muted); max-width: 620px; line-height: 1.75; margin-bottom: 1.5rem; }
-    .tag-row { display: flex; flex-wrap: wrap; gap: 0.5rem; }
-    .tag { background: var(--accent-light); color: var(--accent); font-family: "IBM Plex Mono", monospace; font-size: 0.7rem; padding: 0.28rem 0.55rem; border: 1px solid #c3e6d4; }
-    .divider { height: 1px; background: var(--border); margin: 2.5rem 0; }
-    h2 { font-family: "Syne", sans-serif; font-weight: 700; font-size: 1.25rem; margin-bottom: 1rem; color: var(--text); }
-    p { color: var(--muted); line-height: 1.8; margin-bottom: 1rem; }
-    p:last-child { margin-bottom: 0; }
-    .pipeline-step { display: flex; gap: 1rem; align-items: flex-start; padding: 1rem 0; border-bottom: 1px solid var(--border); }
-    .pipeline-step:last-child { border-bottom: none; }
-    .step-num { font-family: "IBM Plex Mono", monospace; font-size: 0.7rem; color: var(--accent); background: var(--accent-light); padding: 0.2rem 0.5rem; white-space: nowrap; flex-shrink: 0; margin-top: 0.2rem; }
-    .step-content h3 { font-family: "Syne", sans-serif; font-size: 0.95rem; font-weight: 600; color: var(--text); margin-bottom: 0.3rem; }
-    .step-content p { font-size: 0.87rem; margin-bottom: 0; }
-    .component-table { width: 100%; border-collapse: collapse; margin: 1.25rem 0; font-size: 0.87rem; }
-    .component-table th { font-family: "IBM Plex Mono", monospace; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.08em; background: var(--bg2); color: var(--muted); padding: 0.6rem 0.8rem; text-align: left; border: 1px solid var(--border); }
-    .component-table td { padding: 0.65rem 0.8rem; border: 1px solid var(--border); color: var(--muted); vertical-align: top; }
-    .component-table td:first-child { color: var(--text); font-weight: 500; white-space: nowrap; }
-    .code-block { background: #0f1117; padding: 1.5rem; overflow-x: auto; margin: 1.25rem 0; border: 1px solid #2d2d2d; }
-    .code-block pre { font-family: "IBM Plex Mono", monospace; font-size: 0.78rem; color: #e2e8f0; line-height: 1.7; white-space: pre; }
-    .code-label { font-family: "IBM Plex Mono", monospace; font-size: 0.68rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.5rem; }
-    .insight-card { background: var(--bg2); border: 1px solid var(--border); border-top: 2px solid var(--accent); padding: 1.25rem 1.5rem; margin-top: 2rem; }
-    .insight-card h3 { font-family: "IBM Plex Mono", monospace; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--accent); margin-bottom: 0.6rem; }
-    .insight-card p { color: var(--text); font-style: italic; margin-bottom: 0; }
-    .site-footer { background: var(--bg2); border-top: 1px solid var(--border); text-align: center; padding: 2rem; font-family: "IBM Plex Mono", monospace; color: var(--muted); font-size: 0.72rem; }
-    @media (max-width: 640px) {
-      nav { padding: 0.75rem 1rem; }
-      .nav-links { gap: 0.75rem; overflow-x: auto; }
-      .nav-links a { white-space: nowrap; font-size: 0.8rem; }
-      .page-wrap { padding: 5.5rem 1.25rem 4rem; }
-    }
-  </style>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500&family=Bebas+Neue&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="project-page.css" />
 </head>
 <body>
-  <div class="top-accent" aria-hidden="true"></div>
   <header>
     <nav>
-      <a class="nav-logo" href="index.html">PM.dev</a>
+      <a class="nav-logo" href="index.html#hero">PM<span>.dev</span></a>
       <div class="nav-links">
+        <a href="index.html#hero">Home</a>
+        <a href="index.html#freelance">Freelance</a>
         <a href="index.html#projects">Projects</a>
-        <a href="index.html#skills">Skills</a>
         <a href="index.html#contact">Contact</a>
       </div>
     </nav>
@@ -224,6 +175,10 @@ void loop() {
     </div>
   </main>
 
-  <footer class="site-footer">Built by Purvesh Mandawkar — ENTC, SCE Pune</footer>
+  <footer>
+    <span>PM.dev</span>
+    <span>Purvesh Mandawkar — ENTC, Sinhgad College of Engineering, Pune</span>
+    <span style="color:var(--muted)">Built from scratch · 2025</span>
+  </footer>
 </body>
 </html>
