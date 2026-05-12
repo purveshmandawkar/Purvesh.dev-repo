@@ -51,7 +51,9 @@
       z-index: 0;
     }
 
-    main, header, footer { position: relative; z-index: 1; }
+    /* Header above main so fixed nav receives clicks (main was painting on top at equal z-index). */
+    header { position: relative; z-index: 1000; }
+    main, footer { position: relative; z-index: 1; }
 
     /* ── NAV ── */
     nav {
