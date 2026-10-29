@@ -376,6 +376,8 @@
       border-radius: 0.5rem;
     }
 
+    .pcb-project-image.is-collage { object-fit: cover; }
+
     .pcb-project-subtitle {
       color: var(--accent);
       font-size: 0.8rem;
@@ -390,6 +392,18 @@
       line-height: 1.35;
       color: var(--text);
       margin-bottom: 0.5rem;
+    }
+
+    .pcb-project-highlight {
+      display: inline-block;
+      margin-bottom: 0.65rem;
+      padding: 0.3rem 0.7rem;
+      color: var(--accent);
+      background: #eff6ff;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      font-size: 0.85rem;
+      font-weight: 700;
     }
 
     .pcb-project-desc {
@@ -958,6 +972,23 @@
       .contact-row { grid-template-columns: 68px minmax(0, 1fr); gap: 0.65rem; }
     }
 
+    @media (max-width: 560px) {
+      nav {
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 0.35rem 1rem;
+      }
+
+      .nav-links {
+        flex: 1 1 100%;
+        justify-content: space-between;
+        gap: 0.6rem;
+        overflow: visible;
+      }
+
+      .hero-photo { width: 112px; height: 112px; }
+    }
+
     @media (prefers-reduced-motion: reduce) {
       html { scroll-behavior: auto; }
       *, *::before, *::after {
@@ -1040,6 +1071,18 @@
               <p class="pcb-project-desc">PCB design using an ESP32 to control LEDs.</p>
               <ul class="pcb-project-tags">
                 <li>Client Project</li><li>EasyEDA</li><li>ESP32</li>
+              </ul>
+            </div>
+          </article>
+          <article class="pcb-project">
+            <img class="pcb-project-image is-collage" src="images/allprojects.jpg" alt="Multiple electronics and embedded systems projects" />
+            <div>
+              <p class="pcb-project-subtitle">Freelance · Student Builds</p>
+              <h3 class="pcb-project-title">Freelance Electronics Projects</h3>
+              <p class="pcb-project-highlight">15+ Projects</p>
+              <p class="pcb-project-desc">Practical electronics, embedded systems, automation, and IoT projects built for college students.</p>
+              <ul class="pcb-project-tags">
+                <li>Freelance</li><li>Arduino</li><li>ESP32</li><li>IoT</li>
               </ul>
             </div>
           </article>

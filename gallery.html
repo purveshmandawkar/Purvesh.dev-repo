@@ -30,6 +30,7 @@
       background: var(--bg);
       color: var(--text);
       line-height: 1.6;
+      overflow-x: hidden;
     }
 
     header {
@@ -180,6 +181,20 @@
 
     @media (max-width: 480px) {
       .gallery-grid { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 560px) {
+      nav {
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 0.35rem 1rem;
+      }
+
+      .nav-links {
+        flex: 1 1 100%;
+        justify-content: space-between;
+        gap: 0.6rem;
+      }
     }
   </style>
 </head>

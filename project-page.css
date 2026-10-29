@@ -485,3 +485,34 @@ footer span:first-child { color: var(--accent); }
     padding: 1rem;
   }
 }
+
+@media (max-width: 560px) {
+  nav {
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 0.35rem 1rem;
+  }
+
+  .nav-links {
+    flex: 1 1 100%;
+    justify-content: space-between;
+    gap: 0.6rem;
+    overflow: visible;
+  }
+
+  .hysteresis-visual { padding: 1rem; }
+  .h-bar { gap: 0.6rem; }
+  .h-label { width: 68px; }
+  .h-value { width: 42px; }
+  .problem-block,
+  .solution-block,
+  .insight-card { padding: 1rem; }
+  .code-block { padding: 1rem; }
+  .pipeline-step { gap: 0.65rem; }
+  .step-num { font-size: 0.58rem; }
+  .component-table th,
+  .component-table td {
+    padding: 0.55rem 0.6rem;
+    overflow-wrap: anywhere;
+  }
+}
