@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Purvesh Mandawkar — Embedded Systems Builder, ENTC Pune</title>
   <meta name="description" content="Purvesh Mandawkar — ENTC student building real embedded systems, IoT products, and industrial control hardware. 50+ client projects delivered." />
+  <meta name="theme-color" content="#ffffff" />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -594,6 +596,7 @@
       border: 1px solid var(--border2);
       border-radius: 999px;
       font: 500 0.9rem Inter, sans-serif;
+      text-decoration: none;
       cursor: pointer;
       transition: color 0.2s, border-color 0.2s, background 0.2s;
     }
@@ -821,12 +824,154 @@
       .lab-grid { grid-template-columns: 1fr; }
       .lab-img.is-wide { grid-column: auto; }
     }
+
+    /* Visual polish and responsive refinements */
+    header {
+      background: rgba(255, 255, 255, 0.94);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+    }
+
+    nav { gap: 1.5rem; }
+    .nav-logo { flex-shrink: 0; }
+    .nav-links { min-width: 0; }
+
+    .nav-links a {
+      position: relative;
+      padding: 0.35rem 0;
+    }
+
+    .nav-links a::after {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      height: 2px;
+      background: var(--accent);
+      content: "";
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.2s ease;
+    }
+
+    .nav-links a:hover::after,
+    .nav-links a:focus-visible::after { transform: scaleX(1); }
+
+    #hero {
+      position: relative;
+      isolation: isolate;
+      min-height: min(720px, 88svh);
+      display: grid;
+      align-items: center;
+    }
+
+    #hero::before {
+      position: absolute;
+      z-index: -1;
+      top: 5rem;
+      right: max(2rem, calc((100vw - 1100px) / 2));
+      width: min(42vw, 460px);
+      aspect-ratio: 1;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(37, 99, 235, 0.08), transparent 68%);
+      content: "";
+      pointer-events: none;
+    }
+
+    .hero-photo img {
+      box-shadow: 0 18px 48px rgba(15, 23, 42, 0.12);
+    }
+
+    .btn {
+      min-height: 44px;
+      align-items: center;
+      display: inline-flex;
+    }
+
+    .btn-primary { box-shadow: 0 6px 16px rgba(37, 99, 235, 0.18); }
+
+    .projects-list {
+      box-shadow: 0 18px 48px rgba(15, 23, 42, 0.055);
+    }
+
+    .pcb-project { transition: background 0.2s, transform 0.2s; }
+    .pcb-project:hover { transform: translateY(-2px); }
+
+    .skill-card,
+    .client-card,
+    .about-stats,
+    .events-list {
+      border-radius: 0.75rem;
+    }
+
+    .client-card {
+      border-left-width: 3px;
+      border-radius: 0.65rem;
+    }
+
+    .client-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 24px rgba(15, 23, 42, 0.06);
+    }
+
+    .lab-more-button { min-height: 44px; }
+
+    @media (max-width: 768px) {
+      nav { gap: 0.8rem; }
+      .nav-links {
+        flex: 1 1 auto;
+        justify-content: flex-end;
+      }
+
+      #hero {
+        min-height: auto;
+        display: block;
+      }
+
+      #hero::before {
+        top: 4rem;
+        right: 0;
+        width: min(80vw, 18rem);
+      }
+
+      .pcb-project:hover,
+      .client-card:hover { transform: none; }
+    }
+
+    @media (max-width: 480px) {
+      nav { gap: 0.6rem; }
+      .nav-logo { font-size: 0.82rem; }
+      .nav-links { gap: 0.65rem; }
+      .nav-links a { font-size: 0.68rem; }
+      #hero { padding-top: 6rem; }
+      .hero-actions {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 0.6rem;
+      }
+
+      .hero-actions .btn-primary { grid-column: 1 / -1; justify-content: center; }
+      .btn { padding: 0.65rem 0.9rem; font-size: 0.82rem; }
+      .stat-item { padding: 1.15rem 0.4rem; }
+      .stat-num { font-size: 2rem; }
+      .stat-lbl { font-size: 0.58rem; }
+      .contact-row { grid-template-columns: 68px minmax(0, 1fr); gap: 0.65rem; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
   </style>
 </head>
 <body>
 
   <header>
-    <nav>
+    <nav aria-label="Main navigation">
       <a class="nav-logo" href="#hero">Purvesh <span>Mandawkar</span></a>
       <div class="nav-links">
         <a href="#hero">Home</a>
@@ -849,7 +994,7 @@
           </p>
           <div class="hero-actions">
             <a class="btn btn-primary" href="#projects">Explore my work</a>
-            <a class="btn btn-ghost" href="resume.html">View resume</a>
+            <a class="btn btn-ghost" href="resumepurvesh.dev.pdf" target="_blank" rel="noopener noreferrer">View resume</a>
             <a class="btn btn-ghost" href="#contact">Contact</a>
           </div>
         </div>
@@ -913,37 +1058,8 @@
           <div class="lab-img"><img src="images/clientproject02.jpg" alt="Hardware project photo" /></div>
           <div class="lab-img is-wide"><img src="images/circuits01.jpeg" alt="Circuit diagram" /></div>
           <div class="lab-img"><img src="images/minibot.jpg" alt="Mini Bot project" /></div>
-          <div class="lab-img" data-gallery-extra hidden><img src="images/rawimage02.jpeg" alt="Additional project photo: rawimage02" /></div>
-          <div class="lab-img" data-gallery-extra hidden><img src="images/rawimage03.jpeg" alt="Additional project photo: rawimage03" /></div>
-          <div class="lab-img" data-gallery-extra hidden><img src="images/rawimage04.jpeg" alt="Additional project photo: rawimage04" /></div>
-          <div class="lab-img" data-gallery-extra hidden><img src="images/rawimage05.jpeg" alt="Additional project photo: rawimage05" /></div>
-          <div class="lab-img" data-gallery-extra hidden><img src="images/rawimage06.jpeg" alt="Additional project photo: rawimage06" /></div>
-          <div class="lab-img" data-gallery-extra hidden><img src="images/rawimage07.jpeg" alt="Additional project photo: rawimage07" /></div>
-          <div class="lab-img" data-gallery-extra hidden><img src="images/rawimage08.jpeg" alt="Additional project photo: rawimage08" /></div>
-          <div class="lab-img is-wide" data-gallery-extra hidden><img src="images/circuits02.jpeg" alt="Circuit diagram: circuits02" /></div>
-          <div class="lab-img is-wide" data-gallery-extra hidden><img src="images/circuits03.jpeg" alt="Circuit diagram: circuits03" /></div>
-          <div class="lab-img is-wide" data-gallery-extra hidden><img src="images/circuits04.jpeg" alt="Circuit diagram: circuits04" /></div>
-          <div class="lab-img is-wide" data-gallery-extra hidden><img src="images/circuits05.jpeg" alt="Circuit diagram: circuits05" /></div>
-          <div class="lab-img" data-gallery-extra hidden><img src="images/clientproject01.jpg" alt="Client project photo: clientproject01" /></div>
-          <div class="lab-img" data-gallery-extra hidden><img src="images/clientproject03.jpg" alt="Client project photo: clientproject03" /></div>
-          <div class="lab-img" data-gallery-extra hidden><img src="images/gamingpcb.png" alt="Gaming PCB project" /></div>
-          <div class="lab-img" data-gallery-extra hidden><img src="images/alarmpcb.png" alt="Alarm PCB project" /></div>
-          <div class="lab-img" data-gallery-extra hidden><img src="images/pcb01.jpeg" alt="PCB project: pcb01" /></div>
         </div>
-        <button class="lab-more-button" type="button" aria-expanded="false" aria-controls="lab-gallery">Show more</button>
-        <script>
-          const labGallery = document.querySelector("#lab-gallery");
-          const labMoreButton = document.querySelector(".lab-more-button");
-
-          labMoreButton.addEventListener("click", () => {
-            const expanded = labMoreButton.getAttribute("aria-expanded") !== "true";
-            labGallery.querySelectorAll("[data-gallery-extra]").forEach((image) => {
-              image.hidden = !expanded;
-            });
-            labMoreButton.setAttribute("aria-expanded", String(expanded));
-            labMoreButton.textContent = expanded ? "Show less" : "Show more";
-          });
-        </script>
+        <a class="lab-more-button" href="gallery.html" target="_blank" rel="noopener noreferrer">Show more</a>
       </div>
     </section>
 
