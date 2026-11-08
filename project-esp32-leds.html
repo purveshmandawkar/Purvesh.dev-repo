@@ -5,6 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>ESP32 + 3 LEDs PCB — Purvesh Mandawkar</title>
   <meta name="description" content="Project article for the ESP32 + 3 LEDs PCB by Purvesh Mandawkar." />
+  <link rel="canonical" href="https://purvesh.dev/project-esp32-leds.html" />
+  <meta property="og:title" content="ESP32 + 3 LEDs PCB — Purvesh Mandawkar" />
+  <meta property="og:description" content="ESP32 three-LED PCB project documentation." />
+  <meta property="og:image" content="https://purvesh.dev/images/pcb01.jpeg" />
+  <meta property="og:url" content="https://purvesh.dev/project-esp32-leds.html" />
+  <meta property="og:type" content="article" />
+  <meta name="twitter:card" content="summary_large_image" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -12,8 +19,9 @@
   <link rel="stylesheet" href="project-page.css" />
 </head>
 <body class="technical-article">
+  <a class="skip-link" href="#main-content">Skip to content</a>
   <header>
-    <nav>
+    <nav aria-label="Main navigation">
       <a class="nav-logo" href="index.html#hero">PM<span>.dev</span></a>
       <div class="nav-links">
         <a href="index.html#hero">Home</a>
@@ -24,7 +32,7 @@
     </nav>
   </header>
 
-  <main>
+  <main id="main-content">
     <div class="page-wrap">
       <a class="back-link" href="index.html#projects">&larr; Back to Projects</a>
 
@@ -50,10 +58,6 @@
           </article>
         </div>
       </section>
-      <section class="article-section" aria-labelledby="problem">
-        <h2 id="problem">Problem</h2>
-        <p>[TODO: describe the client requirement for the three LED outputs and their intended control behavior.]</p>
-      </section>
       <section class="article-section" aria-labelledby="circuit-design">
         <h2 id="circuit-design">Circuit Design &amp; Schematic</h2>
         <p>At a functional level, the circuit connects the ESP32 controller to three LED outputs. The available material does not identify the GPIO assignments, LED connection topology, current-limiting components, or supply arrangement, so those details are left for confirmation.</p>
@@ -71,32 +75,32 @@
         <p>The available photograph shows the physical board from its copper side, including routed connections and a central module footprint. It is useful for documenting the board artifact, but does not establish board dimensions, layer count, or fabrication details.</p>
         <div class="article-image-grid">
           <figure class="article-figure">
-            <img class="article-image" src="images/pcb01.jpeg" alt="Copper-side photograph of the ESP32 and three-LED PCB" />
+            <img class="article-image" src="images/pcb01.jpeg" alt="Copper-side photograph of the ESP32 and three-LED PCB" width="749" height="742" loading="lazy" decoding="async" />
             <figcaption>Copper-side view of the project PCB.</figcaption>
           </figure>
         </div>
-        <p class="article-placeholder"><strong>Layout record:</strong> Add board dimensions, layer count, connector details, and routing or fabrication notes when available.</p>
+        <p class="article-placeholder"><strong>Documentation note:</strong> Board dimensions, layer count, connector details, and fabrication notes are not included in the available project material.</p>
       </section>
       <section class="article-section" aria-labelledby="components">
         <h2 id="components">Components</h2>
         <ul>
           <li>ESP32 controller and three LEDs, as identified by the project description</li>
-          <li>Current-limiting components, power input, and connectors: [TODO: confirm exact parts and values]</li>
-          <li>Board/module variant and GPIO assignments: [TODO: identify from the actual design]</li>
+          <li>Current-limiting components, power input, and connectors are not documented in the available project material.</li>
+          <li>Board/module variant and GPIO assignments are not documented in the available project material.</li>
         </ul>
       </section>
       <section class="article-section" aria-labelledby="firmware">
         <h2 id="firmware">Code &amp; Firmware</h2>
         <p>The ESP32 firmware is responsible for controlling the three LED outputs. No source code or confirmed behavior is available here, so no illustrative code is included.</p>
-        <p class="article-placeholder"><strong>Firmware record:</strong> Add the development environment, GPIO assignments, control sequence, and any timing or input behavior from the actual implementation.</p>
+        <p class="article-placeholder"><strong>Firmware record:</strong> The development environment, GPIO assignments, control sequence, and timing behavior are not available for publication.</p>
       </section>
       <section class="article-section" aria-labelledby="challenges">
         <h2 id="challenges">Challenges &amp; Solutions</h2>
-        <p>No specific hardware or firmware challenge is documented yet. Add the observed issue, how it was isolated, the change made, and the verified result when available.</p>
+        <p>No specific hardware or firmware challenge is documented in the available record. Confirmed debug notes can be added when available.</p>
       </section>
       <section class="article-section" aria-labelledby="result">
         <h2 id="result">Result</h2>
-        <p>The available project record includes a physical PCB photograph. Firmware bring-up and three-LED functional test results are not documented; add only verified results here.</p>
+        <p>The available project record includes a physical PCB photograph. Firmware bring-up and three-LED functional test results are not documented in the available material.</p>
       </section>
     </div>
   </main>

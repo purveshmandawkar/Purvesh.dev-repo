@@ -5,6 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Gallery — Purvesh Mandawkar</title>
   <meta name="description" content="Project photos, experiments, prototypes, and circuit designs by Purvesh Mandawkar." />
+  <link rel="canonical" href="https://purvesh.dev/gallery.html" />
+  <meta property="og:title" content="Engineering Project Gallery — Purvesh Mandawkar" />
+  <meta property="og:description" content="Project photos, experiments, prototypes, and circuit designs." />
+  <meta property="og:image" content="https://purvesh.dev/images/rawimage01.jpeg" />
+  <meta property="og:url" content="https://purvesh.dev/gallery.html" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -12,6 +19,9 @@
 
   <style>
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    .skip-link { position: fixed; top: 0.75rem; left: 0.75rem; z-index: 2000; padding: 0.55rem 0.8rem; background: #2563eb; color: #fff; font: 600 0.85rem Inter, sans-serif; text-decoration: none; transform: translateY(-200%); }
+    .skip-link:focus { transform: translateY(0); }
 
     :root {
       --bg: #ffffff;
@@ -199,6 +209,7 @@
   </style>
 </head>
 <body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
   <header>
     <nav aria-label="Main navigation">
       <a class="nav-logo" href="index.html">Purvesh <span>Mandawkar</span></a>
@@ -211,7 +222,7 @@
     </nav>
   </header>
 
-  <main>
+  <main id="main-content">
     <p class="sec-label">From the Lab</p>
     <h1>Behind the Builds</h1>
     <p class="intro">Experiments, prototypes, project photos, and circuit designs from my hardware work.</p>
