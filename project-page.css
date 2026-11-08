@@ -516,3 +516,232 @@ footer span:first-child { color: var(--accent); }
     overflow-wrap: anywhere;
   }
 }
+
+/* White-and-blue editorial layout for the new portfolio project articles. */
+.technical-article {
+  --bg: #ffffff;
+  --bg2: #f8fafc;
+  --surface: #f1f5f9;
+  --border: #e2e8f0;
+  --border2: #cbd5e1;
+  --accent: #2563eb;
+  --accent2: #1d4ed8;
+  --text: #0f172a;
+  --muted: #64748b;
+  --muted2: #475569;
+  --green: #16a34a;
+  background: var(--bg);
+  color: var(--text);
+  font-family: Inter, sans-serif;
+}
+
+.technical-article::before { display: none; }
+
+.technical-article nav {
+  background: rgba(255, 255, 255, 0.94);
+  border-bottom-color: var(--border);
+}
+
+.technical-article .nav-logo {
+  color: var(--text);
+  font-family: Manrope, sans-serif;
+  letter-spacing: 0;
+}
+
+.technical-article .nav-logo span { color: var(--muted); }
+
+.technical-article .nav-links a {
+  color: var(--muted2);
+  font-family: Inter, sans-serif;
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+.technical-article .nav-links a:hover { color: var(--accent); }
+
+.technical-article .page-wrap {
+  width: min(940px, 100%);
+  padding-top: 6.5rem;
+}
+
+.technical-article .back-link {
+  font-family: Inter, sans-serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+.technical-article .project-header {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(280px, 1.1fr);
+  align-items: center;
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.technical-article .project-heading { min-width: 0; }
+
+.technical-article .project-tag {
+  font-family: "IBM Plex Mono", monospace;
+  letter-spacing: 0.12em;
+}
+
+.technical-article h1,
+.technical-article h2 {
+  font-family: Manrope, sans-serif;
+  letter-spacing: -0.035em;
+}
+
+.technical-article h1 {
+  font-size: clamp(2rem, 4.5vw, 3.25rem);
+  line-height: 1.12;
+}
+
+.technical-article .project-summary {
+  font-size: 1rem;
+  line-height: 1.75;
+}
+
+.technical-article .project-hero-image,
+.technical-article .gallery-image {
+  display: block;
+  width: 100%;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: 0.75rem;
+  background: var(--bg2);
+}
+
+.technical-article .project-hero-image {
+  margin: 0;
+  background: #ffffff;
+}
+
+.technical-article .project-hero-image img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  object-position: center;
+}
+
+.technical-article .hero-image-caption {
+  display: grid;
+  gap: 0.2rem;
+  padding: 0.75rem 0.9rem;
+  border-top: 1px solid var(--border);
+  color: var(--text);
+  font-size: 0.78rem;
+}
+
+.technical-article .hero-image-caption span {
+  color: var(--muted);
+  font-size: 0.72rem;
+}
+
+.technical-article .gallery-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.technical-article .article-section {
+  padding: 1.75rem 0;
+  border-top: 1px solid var(--border);
+}
+
+.technical-article .article-section h2 {
+  margin-bottom: 0.75rem;
+  font-size: clamp(1.35rem, 2.8vw, 1.8rem);
+  line-height: 1.25;
+}
+
+.technical-article .article-section p {
+  max-width: 68ch;
+  margin: 0;
+}
+
+.technical-article .article-section ul {
+  max-width: 68ch;
+  padding-left: 1.25rem;
+  color: var(--muted2);
+}
+
+.technical-article .article-section li {
+  margin-bottom: 0.35rem;
+  line-height: 1.8;
+}
+
+.technical-article .article-image-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr));
+  gap: 0.85rem;
+  margin-top: 1.25rem;
+}
+
+.technical-article .article-image-placeholder {
+  display: grid;
+  place-items: center;
+  min-width: 0;
+  margin: 0;
+  padding: 1rem;
+  border: 1px dashed var(--border2);
+  border-radius: 0.65rem;
+  background: var(--bg2);
+  text-align: center;
+}
+
+.technical-article .article-image-placeholder--diagram { aspect-ratio: 16 / 10; }
+.technical-article .article-image-placeholder--pcb { aspect-ratio: 4 / 3; }
+.technical-article .article-image-placeholder--photo { aspect-ratio: 4 / 3; }
+
+.technical-article .placeholder-content {
+  display: grid;
+  gap: 0.35rem;
+  color: var(--muted2);
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.technical-article .placeholder-content small {
+  color: var(--muted);
+  font-size: 0.72rem;
+  font-weight: 400;
+}
+
+.technical-article .gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr));
+  gap: 1rem;
+  margin-top: 1.25rem;
+}
+
+.technical-article .gallery-item { min-width: 0; }
+
+.technical-article .gallery-image { aspect-ratio: 4 / 3; }
+
+.technical-article .gallery-item figcaption {
+  margin-top: 0.55rem;
+  color: var(--muted);
+  font-size: 0.82rem;
+}
+
+.technical-article footer {
+  font-family: Inter, sans-serif;
+  font-size: 0.8rem;
+}
+
+.technical-article footer span:first-child { color: var(--text); }
+
+@media (max-width: 768px) {
+  .technical-article .project-header {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 560px) {
+  .technical-article .page-wrap { padding-top: 6.5rem; }
+}

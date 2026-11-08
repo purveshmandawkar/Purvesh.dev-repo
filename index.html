@@ -359,12 +359,21 @@
       align-items: center;
       gap: 1.75rem;
       padding: 1rem 1.25rem;
+      color: inherit;
+      text-decoration: none;
       transition: background 0.2s;
     }
 
     .pcb-project + .pcb-project { border-top: 1px solid var(--border); }
 
     .pcb-project:hover { background: var(--bg2); }
+
+    .pcb-project:focus-visible {
+      position: relative;
+      z-index: 1;
+      outline: 3px solid var(--accent);
+      outline-offset: -3px;
+    }
 
     .pcb-project-image {
       width: 100%;
@@ -1041,7 +1050,7 @@
         <p class="sec-label projects-eyebrow">PCB DESIGN &amp; HARDWARE</p>
         <h2 class="sec-title">Selected Projects</h2>
         <div class="projects-list">
-          <article class="pcb-project">
+          <a class="pcb-project" href="project-gaming-console.html" aria-label="Gaming Console PCB project article">
             <img class="pcb-project-image" src="images/gamingpcbbanner.png" alt="Gaming Console PCB" />
             <div>
               <p class="pcb-project-subtitle">PCB Design · EasyEDA</p>
@@ -1051,8 +1060,8 @@
                 <li>Personal</li><li>EasyEDA</li>
               </ul>
             </div>
-          </article>
-          <article class="pcb-project">
+          </a>
+          <a class="pcb-project" href="project-alarm-pcb.html" aria-label="Alarm Project PCB project article">
             <img class="pcb-project-image" src="images/alarmpcb.png" alt="Alarm Project PCB" />
             <div>
               <p class="pcb-project-subtitle">PCB Design · EasyEDA</p>
@@ -1062,8 +1071,8 @@
                 <li>Personal</li><li>EasyEDA</li>
               </ul>
             </div>
-          </article>
-          <article class="pcb-project">
+          </a>
+          <a class="pcb-project" href="project-esp32-leds.html" aria-label="ESP32 + 3 LEDs PCB project article">
             <img class="pcb-project-image" src="images/pcb01.jpeg" alt="ESP32 + 3 LEDs PCB" />
             <div>
               <p class="pcb-project-subtitle">PCB Design · EasyEDA · ESP32</p>
@@ -1073,8 +1082,8 @@
                 <li>Client Project</li><li>EasyEDA</li><li>ESP32</li>
               </ul>
             </div>
-          </article>
-          <article class="pcb-project">
+          </a>
+          <a class="pcb-project" href="project-freelance.html" aria-label="Freelance Electronics Projects article">
             <img class="pcb-project-image is-collage" src="images/allprojects.jpg" alt="Multiple electronics and embedded systems projects" />
             <div>
               <p class="pcb-project-subtitle">Freelance · Student Builds</p>
@@ -1085,7 +1094,7 @@
                 <li>Freelance</li><li>Arduino</li><li>ESP32</li><li>IoT</li>
               </ul>
             </div>
-          </article>
+          </a>
         </div>
       </div>
     </section>
