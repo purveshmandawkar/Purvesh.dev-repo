@@ -3,8 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Purvesh Mandawkar — Embedded Systems Builder, ENTC Pune</title>
-  <meta name="description" content="Purvesh Mandawkar — ENTC student building real embedded systems, IoT products, and industrial control hardware. 50+ client projects delivered." />
+  <title>Purvesh Mandawkar — I build and deploy embedded systems.</title>
+  <meta name="description" content="ENTC student at Sinhgad College of Engineering, Pune, building embedded systems and designing PCBs." />
+  <meta property="og:title" content="Purvesh Mandawkar — I build and deploy embedded systems." />
+  <meta property="og:description" content="ENTC student at Sinhgad College of Engineering, Pune, building embedded systems and designing PCBs." />
+  <meta property="og:image" content="https://purvesh.dev/images/profile.png" />
+  <link rel="canonical" href="https://purvesh.dev/" />
   <meta name="theme-color" content="#ffffff" />
   <link rel="icon" type="image/svg+xml" href="favicon.svg" />
 
@@ -1016,7 +1020,7 @@
       <div class="nav-links">
         <a href="#hero">Home</a>
         <a href="#projects">Projects</a>
-        <a href="#about">About</a>
+        <a href="#background">Background</a>
         <a href="#contact">Contact</a>
       </div>
     </nav>
@@ -1028,13 +1032,13 @@
     <section id="hero">
       <div class="hero-inner">
         <div class="hero-content">
-          <h1>I design PCBs and build embedded systems.</h1>
+          <h1>I build and deploy embedded systems.</h1>
           <p class="hero-desc">
-            I'm an Electronics and Telecommunication Engineering student exploring PCB design, embedded systems, and practical electronics projects.
+            ENTC student at Sinhgad College of Engineering, Pune, building embedded systems and designing PCBs.
           </p>
           <div class="hero-actions">
             <a class="btn btn-primary" href="#projects">Explore my work</a>
-            <a class="btn btn-ghost" href="resumepurvesh.dev.pdf" target="_blank" rel="noopener noreferrer">View resume</a>
+            <a class="btn btn-ghost" href="Purvesh_Mandawkar_Resume.pdf" target="_blank" rel="noopener noreferrer">View resume</a>
             <a class="btn btn-ghost" href="#contact">Contact</a>
           </div>
         </div>
@@ -1050,6 +1054,17 @@
         <p class="sec-label projects-eyebrow">PCB DESIGN &amp; HARDWARE</p>
         <h2 class="sec-title">Selected Projects</h2>
         <div class="projects-list">
+          <a class="pcb-project" href="case-study-pump-control.html" aria-label="Pump Control and Dry-Run Protection case study">
+            <img class="pcb-project-image" src="images/clientproject01.jpg" alt="Pump-control prototype with ESP32, relay module, float-switch sensor, and wiring" width="960" height="1280" />
+            <div>
+              <p class="pcb-project-subtitle">Embedded Systems · Pump Control</p>
+              <h3 class="pcb-project-title">Pump Control &amp; Dry-Run Protection</h3>
+              <p class="pcb-project-desc">Uses a float-switch input to help prevent pump dry running.<br />MCU, relay driver, and isolation: [TODO: confirm actual parts].</p>
+              <ul class="pcb-project-tags">
+                <li>Embedded C</li><li>Float Switch</li><li>Relay Control</li>
+              </ul>
+            </div>
+          </a>
           <a class="pcb-project" href="project-gaming-console.html" aria-label="Gaming Console PCB project article">
             <img class="pcb-project-image" src="images/gamingpcbbanner.png" alt="Gaming Console PCB" />
             <div>
@@ -1088,8 +1103,8 @@
             <div>
               <p class="pcb-project-subtitle">Freelance · Student Builds</p>
               <h3 class="pcb-project-title">Freelance Electronics Projects</h3>
-              <p class="pcb-project-highlight">15+ Projects</p>
-              <p class="pcb-project-desc">Practical electronics, embedded systems, automation, and IoT projects built for college students.</p>
+              <p class="pcb-project-highlight">Student &amp; Freelance Builds</p>
+              <p class="pcb-project-desc">Embedded systems and IoT projects; client deployments are described separately.</p>
               <ul class="pcb-project-tags">
                 <li>Freelance</li><li>Arduino</li><li>ESP32</li><li>IoT</li>
               </ul>
@@ -1122,45 +1137,34 @@
         <h2 class="sec-title">Technical Skills</h2>
         <div class="skills-grid">
           <article class="skill-card">
-            <div class="skill-cat">Embedded Development</div>
-            <ul class="skill-tags">
-              <li>ESP32 / Arduino</li>
-              <li>Bare-metal Firmware</li>
-              <li>Real-time Control</li>
-              <li>State Machines</li>
-              <li>Watchdog Timers</li>
-            </ul>
-          </article>
-          <article class="skill-card">
-            <div class="skill-cat">Firmware &amp; Programming</div>
+            <div class="skill-cat">Firmware</div>
             <ul class="skill-tags">
               <li>Embedded C</li>
-              <li>C++ (Arduino)</li>
-              <li>Interrupt Handling</li>
-              <li>Non-blocking Logic</li>
+              <li>Arduino (C/C++)</li>
+              <li>ESP32</li>
+              <li>Arduino (ATmega)</li>
             </ul>
           </article>
           <article class="skill-card">
-            <div class="skill-cat">PCB &amp; Circuit Design</div>
+            <div class="skill-cat">PCB &amp; Hardware</div>
             <ul class="skill-tags">
-              <li>Schematic Design</li>
-              <li>PCB Layout</li>
-              <li>KiCad</li>
+              <li>PCB design (EasyEDA)</li>
+              <li>Schematics</li>
               <li>Soldering</li>
-              <li>Power Isolation</li>
+              <li>Hardware assembly &amp; debugging</li>
             </ul>
           </article>
           <article class="skill-card">
-            <div class="skill-cat">Hardware Systems</div>
+            <div class="skill-cat">Systems &amp; Control</div>
             <ul class="skill-tags">
-              <li>Analog Signal Chain</li>
-              <li>Power Electronics</li>
-              <li>Sensor Integration</li>
-              <li>Relay &amp; Actuator Control</li>
-              <li>Fail-safe Design</li>
+              <li>GPIO, UART &amp; sensor interfacing</li>
+              <li>Wi-Fi IoT, Blynk &amp; remote monitoring/control</li>
+              <li>Relay control, GSM SMS alerts &amp; OLED displays</li>
+              <li>Home, pump &amp; irrigation automation</li>
             </ul>
           </article>
         </div>
+        <p class="lab-sub"><strong>Currently learning:</strong> Generative AI and developing higher-level PCB design projects.</p>
       </div>
     </section>
 
@@ -1168,128 +1172,54 @@
     <div class="stats-bar">
       <div class="stats-inner">
         <div class="stat-item">
-          <div class="stat-num">50+</div>
-          <div class="stat-lbl">Client Projects</div>
+          <div class="stat-num">15</div>
+          <div class="stat-lbl">Paid Client Projects</div>
         </div>
         <div class="stat-item">
-          <div class="stat-num">20+</div>
+          <div class="stat-num">20</div>
           <div class="stat-lbl">Live Deployments</div>
         </div>
         <div class="stat-item">
-          <div class="stat-num">4+</div>
-          <div class="stat-lbl">Project Domains</div>
+          <div class="stat-num">20</div>
+          <div class="stat-lbl">Student/Freelance Builds</div>
         </div>
         <div class="stat-item">
-          <div class="stat-num">2nd</div>
+          <div class="stat-num">3rd</div>
           <div class="stat-lbl">Year ENTC</div>
         </div>
       </div>
     </div>
 
-    <!-- ── FREELANCE ── -->
-    <section id="freelance">
-      <div class="wrap">
-        <p class="sec-label">Freelance Work</p>
-        <h2 class="sec-title">Client Deployments</h2>
+    <!-- ── BACKGROUND & FIELD WORK ── -->
+    <section id="background">
+      <div class="wrap" id="about">
+        <p class="sec-label">Background &amp; Field Work</p>
+        <h2 class="sec-title">Background &amp; Field Work</h2>
         <div class="freelance-inner">
-          <div class="freelance-text">
+          <div class="freelance-text" id="freelance">
             <p>
-              Not just personal projects — <strong>50+ clients</strong> have paid for real hardware solutions.
-              These aren't lab prototypes sitting on a shelf. They're deployed in homes, farms, and small industries
-              across Pune, solving problems that cost money when they fail.
+              I'm a third-year ENTC student at Sinhgad College of Engineering, Pune, focused on a core embedded systems or IoT internship. My work spans embedded firmware, PCB design, IoT, and home, pump, irrigation, and industrial automation. Attended EFY Expo Pune.
             </p>
-            <p>
-              Most client work falls into recurring categories: pump automation, home appliance control,
-              and field monitoring. <strong>20+ projects are currently live and operational.</strong>
-              Each repeat build adds field-debugging experience that you can't get from a tutorial.
-            </p>
-            <div class="freelance-note">
-              <strong>// Status:</strong> 20+ projects currently live and operational in real client environments.
-            </div>
           </div>
           <div class="client-grid">
             <div class="client-card">
               <div class="client-type">Home Automation</div>
-              <div class="client-desc">Wi-Fi relay control for appliances — delivered and operational for multiple households.</div>
+              <div class="client-desc">Wi-Fi IoT and relay control for home systems.</div>
             </div>
             <div class="client-card">
               <div class="client-type">Pump Control</div>
-              <div class="client-desc">Water pump automation with float-switch logic and dry-run protection. Real-field deployment.</div>
+              <div class="client-desc">Pump automation with remote monitoring and control.</div>
             </div>
             <div class="client-card">
               <div class="client-type">Irrigation</div>
-              <div class="client-desc">Soil moisture-based automated watering for small farms and gardens.</div>
+              <div class="client-desc">Automation projects for irrigation systems.</div>
             </div>
             <div class="client-card">
               <div class="client-type">Industrial</div>
-              <div class="client-desc">Custom control systems for small-scale industrial loads with fail-safe requirements.</div>
+              <div class="client-desc">Industrial automation and control.</div>
             </div>
           </div>
         </div>
-      </div>
-    </section>
-
-    <!-- ── ABOUT ── -->
-    <section id="about">
-      <div class="wrap">
-        <p class="sec-label">About</p>
-        <h2 class="sec-title">Background</h2>
-        <div class="about-layout">
-          <div class="about-text">
-            <p>
-              Started with curiosity. Saw a circuit work for the first time and realized electronics
-              isn't theory — it's a tool to build real products. That's what pulled me deeper.
-            </p>
-            <p>
-              Since then: 50+ client builds, real field deployments, and hardware that has to work
-              when it matters — not just on a demo bench. Currently 2nd year ENTC at Sinhgad College of
-              Engineering, Pune. <strong>Targeting core embedded systems internship.</strong>
-            </p>
-            <p>
-              Next: deeper embedded C (registers, timers, interrupts), ARM Cortex-M, driver development.
-              The goal is to go from builder to engineer — someone who understands the system,
-              not just the schematic.
-            </p>
-          </div>
-          <div class="about-stats">
-            <div class="astat">
-              <div class="astat-num">50+</div>
-              <div class="astat-lbl">Clients Served</div>
-            </div>
-            <div class="astat">
-              <div class="astat-num">20+</div>
-              <div class="astat-lbl">Live Projects</div>
-            </div>
-            <div class="astat">
-              <div class="astat-num">2nd</div>
-              <div class="astat-lbl">Year ENTC</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ── EVENTS ── -->
-    <section id="events">
-      <div class="wrap">
-        <p class="sec-label">Events</p>
-        <h2 class="sec-title">Attended</h2>
-        <ul class="events-list">
-          <li class="event-card">
-            <div class="event-head">
-              <div class="event-name">Odoo Event</div>
-              <div class="event-year">2025</div>
-            </div>
-            <p class="event-desc">Product and innovation-focused event featuring industry talks, demos, and practical insights into building scalable tech solutions.</p>
-          </li>
-          <li class="event-card">
-            <div class="event-head">
-              <div class="event-name">EFY Expo Pune</div>
-              <div class="event-year">2025</div>
-            </div>
-            <p class="event-desc">Electronics-focused expo showcasing components, embedded systems, and current trends in hardware product development.</p>
-          </li>
-        </ul>
       </div>
     </section>
 
@@ -1305,8 +1235,7 @@
               // Available for core engineering roles
             </p>
             <div class="contact-note">
-              50+ client projects delivered. Hardware that works in the field, not just on a demo bench.
-              Looking for embedded / IoT internship roles where engineering depth matters.
+              Looking for a core embedded systems or IoT internship.
             </div>
           </div>
           <div class="contact-list">
@@ -1316,11 +1245,11 @@
             </div>
             <div class="contact-row">
               <span class="contact-label">GitHub</span>
-              <a class="contact-link" href="https://github.com/purveshmandawkar" target="_blank">github.com/purveshmandawkar</a>
+              <a class="contact-link" href="https://github.com/purveshmandawkar" target="_blank" rel="noopener noreferrer">github.com/purveshmandawkar</a>
             </div>
             <div class="contact-row">
               <span class="contact-label">LinkedIn</span>
-              <a class="contact-link" href="https://www.linkedin.com/in/purvesh-mandawkar-790a9a1aa/" target="_blank">Purvesh Mandawkar</a>
+              <a class="contact-link" href="https://www.linkedin.com/in/purvesh-mandawkar-790a9a1aa/" target="_blank" rel="noopener noreferrer">Purvesh Mandawkar</a>
             </div>
           </div>
         </div>
@@ -1332,7 +1261,7 @@
   <footer>
     <span>PM.dev</span>
     <span>Purvesh Mandawkar — ENTC, Sinhgad College of Engineering, Pune</span>
-    <span style="color:var(--muted)">Built from scratch · 2025</span>
+    <span style="color:var(--muted)">Built from scratch · 2026</span>
   </footer>
 
 </body>

@@ -32,60 +32,71 @@
         <div class="project-heading">
           <p class="project-tag">PCB Design · EasyEDA · ESP32</p>
           <h1>ESP32 + 3 LEDs PCB</h1>
-          <p class="project-summary">Project details will be added here.</p>
+          <p class="project-summary">A client PCB project using an ESP32 to control three LEDs. The available photograph shows the board's copper side; GPIO assignments and firmware behavior are not documented.</p>
         </div>
-        <figure class="project-hero-image">
-          <img src="images/pcb01.jpeg" alt="ESP32 + 3 LEDs PCB" />
-          <figcaption class="hero-image-caption">
-            <strong>Featured project photograph</strong>
-            <span>Current portfolio image; replace with a project photograph when available.</span>
-          </figcaption>
-        </figure>
       </header>
 
       <section class="article-section" aria-labelledby="overview">
         <h2 id="overview">Project Overview</h2>
-        <p>Project description and intended use will be documented here.</p>
-        <p>The project objective and problem it addresses will be added when details are available.</p>
+        <p>This client project combines an ESP32 with three LED outputs on a custom PCB. The stated function is LED control; the interaction model, timing requirements, and intended operating environment are not specified in the current project record.</p>
+        <div class="detail-grid">
+          <article class="detail-card">
+            <h3>Controller</h3>
+            <p>ESP32, as identified by the project description.</p>
+          </article>
+          <article class="detail-card">
+            <h3>Outputs</h3>
+            <p>Three LEDs controlled by the ESP32. Their pin mapping and behavior should be added from the confirmed design.</p>
+          </article>
+        </div>
       </section>
-      <section class="article-section" aria-labelledby="design">
-        <h2 id="design">Design &amp; Implementation</h2>
-        <ul>
-          <li>Components and tools: details to be added.</li>
-          <li>Circuit architecture and development process: details to be added.</li>
-        </ul>
+      <section class="article-section" aria-labelledby="problem">
+        <h2 id="problem">Problem</h2>
+        <p>[TODO: describe the client requirement for the three LED outputs and their intended control behavior.]</p>
+      </section>
+      <section class="article-section" aria-labelledby="circuit-design">
+        <h2 id="circuit-design">Circuit Design &amp; Schematic</h2>
+        <p>At a functional level, the circuit connects the ESP32 controller to three LED outputs. The available material does not identify the GPIO assignments, LED connection topology, current-limiting components, or supply arrangement, so those details are left for confirmation.</p>
+        <div class="article-note">
+          <strong>Details to add when confirmed</strong>
+          <ul>
+            <li>ESP32 board or module variant and GPIO-to-LED mapping</li>
+            <li>LED electrical characteristics and current-limiting values</li>
+            <li>Power input and schematic reference</li>
+          </ul>
+        </div>
+      </section>
+      <section class="article-section" aria-labelledby="pcb-layout">
+        <h2 id="pcb-layout">PCB Design &amp; Layout</h2>
+        <p>The available photograph shows the physical board from its copper side, including routed connections and a central module footprint. It is useful for documenting the board artifact, but does not establish board dimensions, layer count, or fabrication details.</p>
         <div class="article-image-grid">
-          <figure class="article-image-placeholder article-image-placeholder--diagram" aria-label="Circuit schematic image placeholder">
-            <div class="placeholder-content"><span>Circuit schematic</span><small>Image to be added</small></div>
-          </figure>
-          <figure class="article-image-placeholder article-image-placeholder--diagram" aria-label="System block diagram image placeholder">
-            <div class="placeholder-content"><span>System block diagram</span><small>Image to be added</small></div>
-          </figure>
-          <figure class="article-image-placeholder article-image-placeholder--pcb" aria-label="PCB layout image placeholder">
-            <div class="placeholder-content"><span>PCB layout</span><small>Image to be added</small></div>
+          <figure class="article-figure">
+            <img class="article-image" src="images/pcb01.jpeg" alt="Copper-side photograph of the ESP32 and three-LED PCB" />
+            <figcaption>Copper-side view of the project PCB.</figcaption>
           </figure>
         </div>
+        <p class="article-placeholder"><strong>Layout record:</strong> Add board dimensions, layer count, connector details, and routing or fabrication notes when available.</p>
+      </section>
+      <section class="article-section" aria-labelledby="components">
+        <h2 id="components">Components</h2>
+        <ul>
+          <li>ESP32 controller and three LEDs, as identified by the project description</li>
+          <li>Current-limiting components, power input, and connectors: [TODO: confirm exact parts and values]</li>
+          <li>Board/module variant and GPIO assignments: [TODO: identify from the actual design]</li>
+        </ul>
+      </section>
+      <section class="article-section" aria-labelledby="firmware">
+        <h2 id="firmware">Code &amp; Firmware</h2>
+        <p>The ESP32 firmware is responsible for controlling the three LED outputs. No source code or confirmed behavior is available here, so no illustrative code is included.</p>
+        <p class="article-placeholder"><strong>Firmware record:</strong> Add the development environment, GPIO assignments, control sequence, and any timing or input behavior from the actual implementation.</p>
       </section>
       <section class="article-section" aria-labelledby="challenges">
         <h2 id="challenges">Challenges &amp; Solutions</h2>
-        <p>Verified technical issues, diagnostic steps, and confirmed solutions will be documented here.</p>
-        <div class="article-image-grid">
-          <figure class="article-image-placeholder article-image-placeholder--photo" aria-label="Testing and debugging photographs placeholder">
-            <div class="placeholder-content"><span>Testing and debugging photographs</span><small>Images to be added</small></div>
-          </figure>
-        </div>
+        <p>No specific hardware or firmware challenge is documented yet. Add the observed issue, how it was isolated, the change made, and the verified result when available.</p>
       </section>
-      <section class="article-section" aria-labelledby="outcome">
-        <h2 id="outcome">Final Outcome</h2>
-        <p>Final verified result and key learnings will be documented here.</p>
-        <div class="article-image-grid">
-          <figure class="article-image-placeholder article-image-placeholder--photo" aria-label="Hardware assembly photograph placeholder">
-            <div class="placeholder-content"><span>Hardware assembly</span><small>Photograph to be added</small></div>
-          </figure>
-          <figure class="article-image-placeholder article-image-placeholder--photo" aria-label="Final working prototype photograph placeholder">
-            <div class="placeholder-content"><span>Final working prototype</span><small>Photograph to be added</small></div>
-          </figure>
-        </div>
+      <section class="article-section" aria-labelledby="result">
+        <h2 id="result">Result</h2>
+        <p>The available project record includes a physical PCB photograph. Firmware bring-up and three-LED functional test results are not documented; add only verified results here.</p>
       </section>
     </div>
   </main>

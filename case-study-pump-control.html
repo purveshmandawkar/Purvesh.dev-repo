@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pump Control &amp; Dry-Run Protection — Purvesh Mandawkar</title>
+  <meta name="description" content="Pump-control case study covering dry-run risk, float-switch input, relay control, and firmware logic." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="project-page.css" />
+</head>
+<body class="technical-article">
+  <header>
+    <nav>
+      <a class="nav-logo" href="index.html#hero">PM<span>.dev</span></a>
+      <div class="nav-links">
+        <a href="index.html#hero">Home</a>
+        <a href="index.html#freelance">Freelance</a>
+        <a href="index.html#projects">Projects</a>
+        <a href="index.html#contact">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <div class="page-wrap">
+      <a class="back-link" href="index.html#projects">&larr; Back to Projects</a>
+
+      <header class="project-header">
+        <div class="project-heading">
+          <p class="project-tag">Embedded Systems · Pump Control</p>
+          <h1>Pump Control &amp; Dry-Run Protection</h1>
+          <p class="project-summary">A pump-control case study focused on float-switch sensing, relay actuation, and avoiding pump operation without water. Project-specific hardware and deployment details are marked for confirmation.</p>
+        </div>
+      </header>
+
+      <section class="article-section" aria-labelledby="problem">
+        <h2 id="problem">Problem</h2>
+        <p>A pump operating without the fluid it is designed to move may lose the cooling or lubrication that fluid provides. Continued dry running can cause overheating, accelerated wear, and pump damage; the exact failure mode depends on pump type and construction.</p>
+        <p class="article-placeholder"><strong>Project context:</strong> [TODO: identify the pump type, installation context, and specific dry-run risk this control system addresses.]</p>
+      </section>
+
+      <section class="article-section" aria-labelledby="design">
+        <h2 id="design">Design</h2>
+        <p>The control path should document how the float-switch input reaches the MCU and how the controller commands the relay driver. Include the schematic or board view once the actual design artifact is available.</p>
+        <p class="article-placeholder"><strong>Design reference:</strong> [TODO: add the confirmed schematic or PCB image and describe the signal and power paths.]</p>
+      </section>
+
+      <section class="article-section" aria-labelledby="hardware">
+        <h2 id="hardware">Hardware</h2>
+        <p>Record the control and switched-power arrangement separately. Confirm the actual isolation barrier and electrical domains before describing the system as isolated or protected.</p>
+        <p class="article-placeholder"><strong>Hardware summary:</strong> [TODO: describe the actual MCU, relay-driver arrangement, float-switch interface, power supply, and isolation method.]</p>
+      </section>
+
+      <section class="article-section" aria-labelledby="components">
+        <h2 id="components">Components</h2>
+        <ul>
+          <li>MCU or development board: [TODO: exact part or board]</li>
+          <li>Relay driver and relay: [TODO: module/device and ratings]</li>
+          <li>Float switch and input circuit: [TODO: type, wiring, and interface]</li>
+          <li>Isolation and power components: [TODO: actual components and design details]</li>
+        </ul>
+      </section>
+
+      <section class="article-section" aria-labelledby="firmware">
+        <h2 id="firmware">Firmware Logic</h2>
+        <p>Document the confirmed control flow as a state machine: read and validate the float-switch input, apply non-blocking timing where implemented, and prevent or stop pump operation when the confirmed dry-run condition is detected.</p>
+        <ul>
+          <li>States and transitions: [TODO: list the actual states and float-switch conditions]</li>
+          <li>Non-blocking timing: [TODO: describe the timer/debounce behavior and values used]</li>
+          <li>Dry-run response: [TODO: describe the implemented safe output and recovery behavior]</li>
+          <li>Watchdog: [TODO: confirm whether a watchdog is actually used; if so, identify its behavior]</li>
+        </ul>
+      </section>
+
+      <section class="article-section" aria-labelledby="result">
+        <h2 id="result">Field Result</h2>
+        <p>Installation count: [TODO: verified number]. Operating duration: [TODO: verified duration and observation period].</p>
+        <p class="article-placeholder"><strong>Evidence:</strong> [TODO: add the basis for these results, such as commissioning records or documented field observations.]</p>
+      </section>
+
+      <section class="article-section" aria-labelledby="photos">
+        <h2 id="photos">Photos</h2>
+        <p>The available photo records a prototype assembly. It does not by itself establish the installation count or field operating duration.</p>
+        <div class="article-image-grid">
+          <figure class="article-figure">
+            <img class="article-image" src="images/clientproject01.jpg" alt="Pump-control prototype board with an ESP32 module, relay module, float-switch sensor, and wiring" width="960" height="1280" />
+            <figcaption>Prototype assembly; add a field installation photo when available.</figcaption>
+          </figure>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    <span>PM.dev</span>
+    <span>Purvesh Mandawkar — ENTC, Sinhgad College of Engineering, Pune</span>
+    <span>Portfolio project article</span>
+  </footer>
+</body>
+</html>
