@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex" />
+  <title>Study Resources | Purvesh Mandawkar</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <style>
+    body { margin: 0; padding: 3rem 1.25rem; color: #0f172a; font: 1rem/1.6 Inter, sans-serif; }
+    main { width: min(620px, 100%); margin: 10vh auto; }
+    a { color: #2563eb; font-weight: 600; }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Study resources are organized by folder</h1>
+    <p>Browse the current collection and open a subject folder to find its resources.</p>
+    <a id="library-link" href="study-material.html">Open Study Material</a>
+  </main>
+  <script src="study-material-data.js"></script>
+  <script>
+    const subjectCode = new URLSearchParams(window.location.search).get("subject");
+    const collection = window.studyMaterialTree.children.find((folder) => folder.name === "TE Material");
+    const subject = collection && collection.children.find((folder) => folder.name === subjectCode);
+
+    if (subject) {
+      window.location.replace("study-material.html?path=" + encodeURIComponent(subject.path));
+    }
+  </script>
+</body>
+</html>
