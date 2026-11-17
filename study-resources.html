@@ -21,7 +21,7 @@
   <script src="study-material-data.js"></script>
   <script>
     const subjectCode = new URLSearchParams(window.location.search).get("subject");
-    const collection = window.studyMaterialTree.children.find((folder) => folder.name === "TE Material");
+    const collection = window.studyMaterialTree.children.find((folder) => folder.name === "TE Material (Sem 5)");
     const subject = collection && collection.children.find((folder) => folder.name === subjectCode);
 
     if (subject) {

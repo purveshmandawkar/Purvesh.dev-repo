@@ -4,7 +4,7 @@
     "path":  "",
     "children":  [
                      {
-                         "name":  "TE Material",
+                         "name":  "TE Material (Sem 5)",
                          "type":  "folder",
                          "path":  "TE material",
                          "children":  [
@@ -591,11 +591,603 @@
                                               "type":  "file",
                                               "path":  "TE material/TE_E\u0026TC Engg_NEP(R3) 2024 Pattern.pdf"
                                           }
-                                      ],
-                         "comingSoonSubjects":  [
-                                                    "BM",
-                                                    "Agentic AI"
-                                                ]
+                                      ]
+                     },
+                     {
+                         "name":  "Deep Researched Projects",
+                         "type":  "folder",
+                         "path":  "DEEP RESEARCHED PROJECTS",
+                         "children":  [
+                                          {
+                                              "name":  "Automation",
+                                              "type":  "folder",
+                                              "path":  "DEEP RESEARCHED PROJECTS/Automation",
+                                              "children":  [
+                                                               {
+                                                                   "name":  "Build_Your_First_Automation.pdf",
+                                                                   "type":  "file",
+                                                                   "path":  "DEEP RESEARCHED PROJECTS/Automation/Build_Your_First_Automation.pdf"
+                                                               }
+                                                           ]
+                                          },
+                                          {
+                                              "name":  "Focus lock",
+                                              "type":  "folder",
+                                              "path":  "DEEP RESEARCHED PROJECTS/Focus lock",
+                                              "children":  [
+                                                               {
+                                                                   "name":  "FocusLock_Foundations.pdf",
+                                                                   "type":  "file",
+                                                                   "path":  "DEEP RESEARCHED PROJECTS/Focus lock/FocusLock_Foundations.pdf"
+                                                               }
+                                                           ]
+                                          },
+                                          {
+                                              "name":  "spendly",
+                                              "type":  "folder",
+                                              "path":  "DEEP RESEARCHED PROJECTS/spendly",
+                                              "children":  [
+                                                               {
+                                                                   "name":  "AI_Build_Playbook_Spendly.pdf",
+                                                                   "type":  "file",
+                                                                   "path":  "DEEP RESEARCHED PROJECTS/spendly/AI_Build_Playbook_Spendly.pdf"
+                                                               },
+                                                               {
+                                                                   "name":  "Build_Your_First_Backend_Supabase.pdf",
+                                                                   "type":  "file",
+                                                                   "path":  "DEEP RESEARCHED PROJECTS/spendly/Build_Your_First_Backend_Supabase.pdf"
+                                                               },
+                                                               {
+                                                                   "name":  "Spendly_V1_Understanding_Report.pdf",
+                                                                   "type":  "file",
+                                                                   "path":  "DEEP RESEARCHED PROJECTS/spendly/Spendly_V1_Understanding_Report.pdf"
+                                                               }
+                                                           ]
+                                          }
+                                      ]
+                     },
+                     {
+                         "name":  "PCB Design",
+                         "type":  "folder",
+                         "path":  "PCB Design",
+                         "children":  [
+                                          {
+                                              "name":  "All Lectures",
+                                              "type":  "folder",
+                                              "path":  "PCB Design/All Lectures",
+                                              "children":  [
+
+                                                           ],
+                                              "comingSoon":  "Video lectures coming soon."
+                                          },
+                                          {
+                                              "name":  "Datasheets",
+                                              "type":  "folder",
+                                              "path":  "PCB Design/Datasheets",
+                                              "children":  [
+                                                               {
+                                                                   "name":  "74HC4511.pdf",
+                                                                   "type":  "file",
+                                                                   "path":  "PCB Design/Datasheets/74HC4511.pdf"
+                                                               },
+                                                               {
+                                                                   "name":  "Atmega328.pdf",
+                                                                   "type":  "file",
+                                                                   "path":  "PCB Design/Datasheets/Atmega328.pdf"
+                                                               },
+                                                               {
+                                                                   "name":  "L293D.pdf",
+                                                                   "type":  "file",
+                                                                   "path":  "PCB Design/Datasheets/L293D.pdf"
+                                                               }
+                                                           ]
+                                          },
+                                          {
+                                              "name":  "Design Files",
+                                              "type":  "folder",
+                                              "path":  "PCB Design/Design Files",
+                                              "children":  [
+                                                               {
+                                                                   "name":  "Assembly Files",
+                                                                   "type":  "folder",
+                                                                   "path":  "PCB Design/Design Files/Assembly Files",
+                                                                   "children":  [
+                                                                                    {
+                                                                                        "name":  "PnP_Hardware Schematic_back.txt",
+                                                                                        "type":  "file",
+                                                                                        "path":  "PCB Design/Design Files/Assembly Files/PnP_Hardware Schematic_back.txt"
+                                                                                    },
+                                                                                    {
+                                                                                        "name":  "PnP_Hardware Schematic_front.txt",
+                                                                                        "type":  "file",
+                                                                                        "path":  "PCB Design/Design Files/Assembly Files/PnP_Hardware Schematic_front.txt"
+                                                                                    }
+                                                                                ]
+                                                               },
+                                                               {
+                                                                   "name":  "Bill Of Material",
+                                                                   "type":  "folder",
+                                                                   "path":  "PCB Design/Design Files/Bill Of Material",
+                                                                   "children":  [
+                                                                                    {
+                                                                                        "name":  "Hardware Schematic.txt",
+                                                                                        "type":  "file",
+                                                                                        "path":  "PCB Design/Design Files/Bill Of Material/Hardware Schematic.txt"
+                                                                                    }
+                                                                                ]
+                                                               },
+                                                               {
+                                                                   "name":  "DrillFiles",
+                                                                   "type":  "folder",
+                                                                   "path":  "PCB Design/Design Files/DrillFiles",
+                                                                   "children":  [
+                                                                                    {
+                                                                                        "name":  "drill_1_16.xln",
+                                                                                        "type":  "file",
+                                                                                        "path":  "PCB Design/Design Files/DrillFiles/drill_1_16.xln"
+                                                                                    }
+                                                                                ]
+                                                               },
+                                                               {
+                                                                   "name":  "DXF File",
+                                                                   "type":  "folder",
+                                                                   "path":  "PCB Design/Design Files/DXF File",
+                                                                   "children":  [
+                                                                                    {
+                                                                                        "name":  "Enclosure Outline.dxf",
+                                                                                        "type":  "file",
+                                                                                        "path":  "PCB Design/Design Files/DXF File/Enclosure Outline.dxf"
+                                                                                    }
+                                                                                ]
+                                                               },
+                                                               {
+                                                                   "name":  "Eagle Files",
+                                                                   "type":  "folder",
+                                                                   "path":  "PCB Design/Design Files/Eagle Files",
+                                                                   "children":  [
+                                                                                    {
+                                                                                        "name":  "Hardware Schematic.brd",
+                                                                                        "type":  "file",
+                                                                                        "path":  "PCB Design/Design Files/Eagle Files/Hardware Schematic.brd"
+                                                                                    },
+                                                                                    {
+                                                                                        "name":  "Hardware Schematic.sch",
+                                                                                        "type":  "file",
+                                                                                        "path":  "PCB Design/Design Files/Eagle Files/Hardware Schematic.sch"
+                                                                                    }
+                                                                                ]
+                                                               },
+                                                               {
+                                                                   "name":  "Eagle Libraries",
+                                                                   "type":  "folder",
+                                                                   "path":  "PCB Design/Design Files/Eagle Libraries",
+                                                                   "children":  [
+                                                                                    {
+                                                                                        "name":  "PC_Capacitor_0603.lbr",
+                                                                                        "type":  "file",
+                                                                                        "path":  "PCB Design/Design Files/Eagle Libraries/PC_Capacitor_0603.lbr"
+                                                                                    },
+                                                                                    {
+                                                                                        "name":  "PC_CON_DC_Power_Jack.lbr",
+                                                                                        "type":  "file",
+                                                                                        "path":  "PCB Design/Design Files/Eagle Libraries/PC_CON_DC_Power_Jack.lbr"
+                                                                                    },
+                                                                                    {
+                                                                                        "name":  "PC_CON_ScrewTerminal_2P_5mm.lbr",
+                                                                                        "type":  "file",
+                                                                                        "path":  "PCB Design/Design Files/Eagle Libraries/PC_CON_ScrewTerminal_2P_5mm.lbr"
+                                                                                    },
+                                                                                    {
+                                                                                        "name":  "PC_IC_ATMEGA328-AU.lbr",
+                                                                                        "type":  "file",
+                                                                                        "path":  "PCB Design/Design Files/Eagle Libraries/PC_IC_ATMEGA328-AU.lbr"
+                                                                                    },
+                                                                                    {
+                                                                                        "name":  "PC_IC_ATMEGA328P-AU.lbr",
+                                                                                        "type":  "file",
+                                                                                        "path":  "PCB Design/Design Files/Eagle Libraries/PC_IC_ATMEGA328P-AU.lbr"
+                                                                                    },
+                                                                                    {
+                                                                                        "name":  "PC_IC_CD4511BE.lbr",
+                                                                                        "type":  "file",
+                                                                                        "path":  "PCB Design/Design Files/Eagle Libraries/PC_IC_CD4511BE.lbr"
+                                                                                    },
+                                                                                    {
+                                                                                        "name":  "PC_IC_L7805_TO252.lbr",
+                                                                                        "type":  "file",
+                                                                                        "path":  "PCB Design/Design Files/Eagle Libraries/PC_IC_L7805_TO252.lbr"
+                                                                                    },
+                                                                                    {
+                                                                                        "name":  "PC_IC_L7805ABD2T-TR.lbr",
+                                                                                        "type":  "file",
+                                                                                        "path":  "PCB Design/Design Files/Eagle Libraries/PC_IC_L7805ABD2T-TR.lbr"
+                                                                                    },
+                                                                                    {
+                                                                                        "name":  "PC_LED-7-SegmentDisplay.lbr",
+                                                                                        "type":  "file",
+                                                                                        "path":  "PCB Design/Design Files/Eagle Libraries/PC_LED-7-SegmentDisplay.lbr"
+                                                                                    },
+                                                                                    {
+                                                                                        "name":  "PC_Resistor_0603.lbr",
+                                                                                        "type":  "file",
+                                                                                        "path":  "PCB Design/Design Files/Eagle Libraries/PC_Resistor_0603.lbr"
+                                                                                    },
+                                                                                    {
+                                                                                        "name":  "PC_Switch_1437566-3.lbr",
+                                                                                        "type":  "file",
+                                                                                        "path":  "PCB Design/Design Files/Eagle Libraries/PC_Switch_1437566-3.lbr"
+                                                                                    }
+                                                                                ]
+                                                               },
+                                                               {
+                                                                   "name":  "GerberFiles",
+                                                                   "type":  "folder",
+                                                                   "path":  "PCB Design/Design Files/GerberFiles",
+                                                                   "children":  [
+                                                                                    {
+                                                                                        "name":  "copper_bottom.gbr",
+                                                                                        "type":  "file",
+                                                                                        "path":  "PCB Design/Design Files/GerberFiles/copper_bottom.gbr"
+                                                                                    },
+                                                                                    {
+                                                                                        "name":  "copper_top.gbr",
+                                                                                        "type":  "file",
+                                                                                        "path":  "PCB Design/Design Files/GerberFiles/copper_top.gbr"
+                                                                                    },
+                                                                                    {
+                                                                                        "name":  "gerber_job.gbrjob",
+                                                                                        "type":  "file",
+                                                                                        "path":  "PCB Design/Design Files/GerberFiles/gerber_job.gbrjob"
+                                                                                    },
+                                                                                    {
+                                                                                        "name":  "profile.gbr",
+                                                                                        "type":  "file",
+                                                                                        "path":  "PCB Design/Design Files/GerberFiles/profile.gbr"
+                                                                                    },
+                                                                                    {
+                                                                                        "name":  "silkscreen_bottom.gbr",
+                                                                                        "type":  "file",
+                                                                                        "path":  "PCB Design/Design Files/GerberFiles/silkscreen_bottom.gbr"
+                                                                                    },
+                                                                                    {
+                                                                                        "name":  "silkscreen_top.gbr",
+                                                                                        "type":  "file",
+                                                                                        "path":  "PCB Design/Design Files/GerberFiles/silkscreen_top.gbr"
+                                                                                    },
+                                                                                    {
+                                                                                        "name":  "soldermask_bottom.gbr",
+                                                                                        "type":  "file",
+                                                                                        "path":  "PCB Design/Design Files/GerberFiles/soldermask_bottom.gbr"
+                                                                                    },
+                                                                                    {
+                                                                                        "name":  "soldermask_top.gbr",
+                                                                                        "type":  "file",
+                                                                                        "path":  "PCB Design/Design Files/GerberFiles/soldermask_top.gbr"
+                                                                                    },
+                                                                                    {
+                                                                                        "name":  "solderpaste_bottom.gbr",
+                                                                                        "type":  "file",
+                                                                                        "path":  "PCB Design/Design Files/GerberFiles/solderpaste_bottom.gbr"
+                                                                                    },
+                                                                                    {
+                                                                                        "name":  "solderpaste_top.gbr",
+                                                                                        "type":  "file",
+                                                                                        "path":  "PCB Design/Design Files/GerberFiles/solderpaste_top.gbr"
+                                                                                    }
+                                                                                ]
+                                                               }
+                                                           ]
+                                          },
+                                          {
+                                              "name":  "Hardware Images",
+                                              "type":  "folder",
+                                              "path":  "PCB Design/Hardware Images",
+                                              "children":  [
+                                                               {
+                                                                   "name":  "Hardware Image with sections.png",
+                                                                   "type":  "file",
+                                                                   "path":  "PCB Design/Hardware Images/Hardware Image with sections.png"
+                                                               },
+                                                               {
+                                                                   "name":  "Hardware Image.png",
+                                                                   "type":  "file",
+                                                                   "path":  "PCB Design/Hardware Images/Hardware Image.png"
+                                                               }
+                                                           ]
+                                          },
+                                          {
+                                              "name":  "PCB design Guide",
+                                              "type":  "folder",
+                                              "path":  "PCB Design/PCB design Guide",
+                                              "children":  [
+                                                               {
+                                                                   "name":  "PCB_Design_Illustrated.pdf",
+                                                                   "type":  "file",
+                                                                   "path":  "PCB Design/PCB design Guide/PCB_Design_Illustrated.pdf"
+                                                               }
+                                                           ]
+                                          },
+                                          {
+                                              "name":  "Software - AVRDUDESS",
+                                              "type":  "folder",
+                                              "path":  "PCB Design/Software - AVRDUDESS",
+                                              "children":  [
+                                                               {
+                                                                   "name":  "Languages",
+                                                                   "type":  "folder",
+                                                                   "path":  "PCB Design/Software - AVRDUDESS/Languages",
+                                                                   "children":  [
+                                                                                    {
+                                                                                        "name":  "chinese-zh_CN.xml",
+                                                                                        "type":  "file",
+                                                                                        "path":  "PCB Design/Software - AVRDUDESS/Languages/chinese-zh_CN.xml"
+                                                                                    },
+                                                                                    {
+                                                                                        "name":  "english.xml",
+                                                                                        "type":  "file",
+                                                                                        "path":  "PCB Design/Software - AVRDUDESS/Languages/english.xml"
+                                                                                    },
+                                                                                    {
+                                                                                        "name":  "french.xml",
+                                                                                        "type":  "file",
+                                                                                        "path":  "PCB Design/Software - AVRDUDESS/Languages/french.xml"
+                                                                                    },
+                                                                                    {
+                                                                                        "name":  "german.xml",
+                                                                                        "type":  "file",
+                                                                                        "path":  "PCB Design/Software - AVRDUDESS/Languages/german.xml"
+                                                                                    },
+                                                                                    {
+                                                                                        "name":  "polish.xml",
+                                                                                        "type":  "file",
+                                                                                        "path":  "PCB Design/Software - AVRDUDESS/Languages/polish.xml"
+                                                                                    },
+                                                                                    {
+                                                                                        "name":  "russian.xml",
+                                                                                        "type":  "file",
+                                                                                        "path":  "PCB Design/Software - AVRDUDESS/Languages/russian.xml"
+                                                                                    }
+                                                                                ]
+                                                               },
+                                                               {
+                                                                   "name":  "avrdude.conf",
+                                                                   "type":  "file",
+                                                                   "path":  "PCB Design/Software - AVRDUDESS/avrdude.conf"
+                                                               },
+                                                               {
+                                                                   "name":  "avrdude.exe",
+                                                                   "type":  "file",
+                                                                   "path":  "PCB Design/Software - AVRDUDESS/avrdude.exe"
+                                                               },
+                                                               {
+                                                                   "name":  "avrdudess.exe",
+                                                                   "type":  "file",
+                                                                   "path":  "PCB Design/Software - AVRDUDESS/avrdudess.exe"
+                                                               },
+                                                               {
+                                                                   "name":  "avr-size.exe",
+                                                                   "type":  "file",
+                                                                   "path":  "PCB Design/Software - AVRDUDESS/avr-size.exe"
+                                                               },
+                                                               {
+                                                                   "name":  "bits.xml",
+                                                                   "type":  "file",
+                                                                   "path":  "PCB Design/Software - AVRDUDESS/bits.xml"
+                                                               },
+                                                               {
+                                                                   "name":  "Changelog.txt",
+                                                                   "type":  "file",
+                                                                   "path":  "PCB Design/Software - AVRDUDESS/Changelog.txt"
+                                                               },
+                                                               {
+                                                                   "name":  "config.xml",
+                                                                   "type":  "file",
+                                                                   "path":  "PCB Design/Software - AVRDUDESS/config.xml"
+                                                               },
+                                                               {
+                                                                   "name":  "Credits.txt",
+                                                                   "type":  "file",
+                                                                   "path":  "PCB Design/Software - AVRDUDESS/Credits.txt"
+                                                               },
+                                                               {
+                                                                   "name":  "libusb0.dll",
+                                                                   "type":  "file",
+                                                                   "path":  "PCB Design/Software - AVRDUDESS/libusb0.dll"
+                                                               },
+                                                               {
+                                                                   "name":  "License.txt",
+                                                                   "type":  "file",
+                                                                   "path":  "PCB Design/Software - AVRDUDESS/License.txt"
+                                                               },
+                                                               {
+                                                                   "name":  "presets.xml",
+                                                                   "type":  "file",
+                                                                   "path":  "PCB Design/Software - AVRDUDESS/presets.xml"
+                                                               },
+                                                               {
+                                                                   "name":  "README.md",
+                                                                   "type":  "file",
+                                                                   "path":  "PCB Design/Software - AVRDUDESS/README.md"
+                                                               },
+                                                               {
+                                                                   "name":  "TODO.txt",
+                                                                   "type":  "file",
+                                                                   "path":  "PCB Design/Software - AVRDUDESS/TODO.txt"
+                                                               },
+                                                               {
+                                                                   "name":  "unins000.dat",
+                                                                   "type":  "file",
+                                                                   "path":  "PCB Design/Software - AVRDUDESS/unins000.dat"
+                                                               },
+                                                               {
+                                                                   "name":  "unins000.exe",
+                                                                   "type":  "file",
+                                                                   "path":  "PCB Design/Software - AVRDUDESS/unins000.exe"
+                                                               }
+                                                           ]
+                                          },
+                                          {
+                                              "name":  "Hardware Block Diagram.png",
+                                              "type":  "file",
+                                              "path":  "PCB Design/Hardware Block Diagram.png"
+                                          }
+                                      ]
+                     },
+                     {
+                         "name":  "Training And Placement",
+                         "type":  "folder",
+                         "path":  "Training And Placement",
+                         "children":  [
+                                          {
+                                              "name":  "Assignment _Module 2",
+                                              "type":  "folder",
+                                              "path":  "Training And Placement/Assignment _Module 2",
+                                              "children":  [
+                                                               {
+                                                                   "name":  "Assignment _Module 2.pdf",
+                                                                   "type":  "file",
+                                                                   "path":  "Training And Placement/Assignment _Module 2/Assignment _Module 2.pdf"
+                                                               }
+                                                           ]
+                                          },
+                                          {
+                                              "name":  "Assignment_Module 3",
+                                              "type":  "folder",
+                                              "path":  "Training And Placement/Assignment_Module 3",
+                                              "children":  [
+                                                               {
+                                                                   "name":  "Assignment_Module 3.pdf",
+                                                                   "type":  "file",
+                                                                   "path":  "Training And Placement/Assignment_Module 3/Assignment_Module 3.pdf"
+                                                               }
+                                                           ]
+                                          },
+                                          {
+                                              "name":  "Building up your Gears",
+                                              "type":  "folder",
+                                              "path":  "Training And Placement/Building up your Gears",
+                                              "children":  [
+                                                               {
+                                                                   "name":  "Building up your Gears",
+                                                                   "type":  "folder",
+                                                                   "path":  "Training And Placement/Building up your Gears/Building up your Gears",
+                                                                   "children":  [
+                                                                                    {
+                                                                                        "name":  "M2T1V1.mp4",
+                                                                                        "type":  "file",
+                                                                                        "path":  "Training And Placement/Building up your Gears/Building up your Gears/M2T1V1.mp4"
+                                                                                    },
+                                                                                    {
+                                                                                        "name":  "M2T1V2.mp4",
+                                                                                        "type":  "file",
+                                                                                        "path":  "Training And Placement/Building up your Gears/Building up your Gears/M2T1V2.mp4"
+                                                                                    },
+                                                                                    {
+                                                                                        "name":  "M2T1V3.mp4",
+                                                                                        "type":  "file",
+                                                                                        "path":  "Training And Placement/Building up your Gears/Building up your Gears/M2T1V3.mp4"
+                                                                                    },
+                                                                                    {
+                                                                                        "name":  "M2T1V4.mp4",
+                                                                                        "type":  "file",
+                                                                                        "path":  "Training And Placement/Building up your Gears/Building up your Gears/M2T1V4.mp4"
+                                                                                    },
+                                                                                    {
+                                                                                        "name":  "M2T2V1.mp4",
+                                                                                        "type":  "file",
+                                                                                        "path":  "Training And Placement/Building up your Gears/Building up your Gears/M2T2V1.mp4"
+                                                                                    },
+                                                                                    {
+                                                                                        "name":  "M2T2V2.mp4",
+                                                                                        "type":  "file",
+                                                                                        "path":  "Training And Placement/Building up your Gears/Building up your Gears/M2T2V2.mp4"
+                                                                                    },
+                                                                                    {
+                                                                                        "name":  "M2T2V3.mp4",
+                                                                                        "type":  "file",
+                                                                                        "path":  "Training And Placement/Building up your Gears/Building up your Gears/M2T2V3.mp4"
+                                                                                    },
+                                                                                    {
+                                                                                        "name":  "M2T3V1.mp4",
+                                                                                        "type":  "file",
+                                                                                        "path":  "Training And Placement/Building up your Gears/Building up your Gears/M2T3V1.mp4"
+                                                                                    },
+                                                                                    {
+                                                                                        "name":  "M2T3V2.mp4",
+                                                                                        "type":  "file",
+                                                                                        "path":  "Training And Placement/Building up your Gears/Building up your Gears/M2T3V2.mp4"
+                                                                                    }
+                                                                                ]
+                                                               }
+                                                           ]
+                                          },
+                                          {
+                                              "name":  "Going at the Front",
+                                              "type":  "folder",
+                                              "path":  "Training And Placement/Going at the Front",
+                                              "children":  [
+                                                               {
+                                                                   "name":  "Going at the Front",
+                                                                   "type":  "folder",
+                                                                   "path":  "Training And Placement/Going at the Front/Going at the Front",
+                                                                   "children":  [
+                                                                                    {
+                                                                                        "name":  "M3T1V1.mp4",
+                                                                                        "type":  "file",
+                                                                                        "path":  "Training And Placement/Going at the Front/Going at the Front/M3T1V1.mp4"
+                                                                                    },
+                                                                                    {
+                                                                                        "name":  "M3T1V2.mp4",
+                                                                                        "type":  "file",
+                                                                                        "path":  "Training And Placement/Going at the Front/Going at the Front/M3T1V2.mp4"
+                                                                                    },
+                                                                                    {
+                                                                                        "name":  "M3T1V3.mp4",
+                                                                                        "type":  "file",
+                                                                                        "path":  "Training And Placement/Going at the Front/Going at the Front/M3T1V3.mp4"
+                                                                                    },
+                                                                                    {
+                                                                                        "name":  "M3T2_Text Chapter.pdf",
+                                                                                        "type":  "file",
+                                                                                        "path":  "Training And Placement/Going at the Front/Going at the Front/M3T2_Text Chapter.pdf"
+                                                                                    },
+                                                                                    {
+                                                                                        "name":  "M3T2V1.mp4",
+                                                                                        "type":  "file",
+                                                                                        "path":  "Training And Placement/Going at the Front/Going at the Front/M3T2V1.mp4"
+                                                                                    },
+                                                                                    {
+                                                                                        "name":  "M3T2V2.mp4",
+                                                                                        "type":  "file",
+                                                                                        "path":  "Training And Placement/Going at the Front/Going at the Front/M3T2V2.mp4"
+                                                                                    },
+                                                                                    {
+                                                                                        "name":  "M3T2V3.mp4",
+                                                                                        "type":  "file",
+                                                                                        "path":  "Training And Placement/Going at the Front/Going at the Front/M3T2V3.mp4"
+                                                                                    },
+                                                                                    {
+                                                                                        "name":  "M3T2V4.mp4",
+                                                                                        "type":  "file",
+                                                                                        "path":  "Training And Placement/Going at the Front/Going at the Front/M3T2V4.mp4"
+                                                                                    }
+                                                                                ]
+                                                               }
+                                                           ]
+                                          },
+                                          {
+                                              "name":  "Project Problem Statement",
+                                              "type":  "folder",
+                                              "path":  "Training And Placement/Project Problem Statement",
+                                              "children":  [
+                                                               {
+                                                                   "name":  "Project Problem Statement.pdf",
+                                                                   "type":  "file",
+                                                                   "path":  "Training And Placement/Project Problem Statement/Project Problem Statement.pdf"
+                                                               }
+                                                           ]
+                                          }
+                                      ]
                      }
                  ]
 };

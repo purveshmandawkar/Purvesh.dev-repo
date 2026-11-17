@@ -13,7 +13,9 @@ function Get-RelativePath([string]$FullName) {
   return $FullName.Substring($PSScriptRoot.Length).TrimStart('\') -replace '\\', '/'
 }
 
-function New-FolderEntry([System.IO.DirectoryInfo]$Directory) {
+$comingSoonFolderPath = Join-Path $PSScriptRoot "PCB Design\All Lectures"
+
+function New-FolderEntry([System.IO.DirectoryInfo]$Directory, [string]$DisplayName = $Directory.Name) {
   $children = @(
     Get-ChildItem -LiteralPath $Directory.FullName -Force |
       Sort-Object @{ Expression = { if ($_.PSIsContainer) { 0 } else { 1 } } }, Name |
@@ -30,28 +32,43 @@ function New-FolderEntry([System.IO.DirectoryInfo]$Directory) {
       }
   )
 
-  return [ordered]@{
-    name = $Directory.Name
+  $entry = [ordered]@{
+    name = $DisplayName
     type = "folder"
     path = Get-RelativePath $Directory.FullName
     children = $children
   }
+
+  if ($Directory.FullName -eq $comingSoonFolderPath -and $children.Count -eq 0) {
+      $entry["comingSoon"] = "Video lectures coming soon."
+  }
+
+  return $entry
 }
 
-$materialDirectory = Get-Item -LiteralPath $MaterialPath
+$collections = @(
+  [ordered]@{ name = "TE Material (Sem 5)"; path = $MaterialPath },
+  [ordered]@{ name = "Deep Researched Projects"; path = (Join-Path $PSScriptRoot "DEEP RESEARCHED PROJECTS") },
+  [ordered]@{ name = "PCB Design"; path = (Join-Path $PSScriptRoot "PCB Design") },
+  [ordered]@{ name = "Training And Placement"; path = (Join-Path $PSScriptRoot "Training And Placement") }
+)
+
+$collectionEntries = @(
+  foreach ($collection in $collections) {
+    if (-not (Test-Path -LiteralPath $collection.path -PathType Container)) {
+      throw "Study material folder not found: $($collection.path)"
+    }
+
+    $directory = Get-Item -LiteralPath $collection.path
+    New-FolderEntry $directory $collection.name
+  }
+)
+
 $tree = [ordered]@{
   name = "Study Material"
   type = "folder"
   path = ""
-  children = @(
-    [ordered]@{
-      name = "TE Material"
-      type = "folder"
-      path = Get-RelativePath $materialDirectory.FullName
-      children = (New-FolderEntry $materialDirectory).children
-      comingSoonSubjects = @("BM", "Agentic AI")
-    }
-  )
+  children = $collectionEntries
 }
 
 $json = ConvertTo-Json -InputObject $tree -Depth 100
