@@ -16,6 +16,11 @@ function Get-RelativePath([string]$FullName) {
 $comingSoonFolderPath = Join-Path $PSScriptRoot "PCB Design\All Lectures"
 
 function New-FolderEntry([System.IO.DirectoryInfo]$Directory, [string]$DisplayName = $Directory.Name) {
+  $handwrittenVlsiPath = Join-Path $MaterialPath "VLSI\VLSI  Handwritten"
+  if ($Directory.FullName -eq $handwrittenVlsiPath) {
+    $DisplayName = "Handwritten VLSI"
+  }
+
   $children = @(
     Get-ChildItem -LiteralPath $Directory.FullName -Force |
       Sort-Object @{ Expression = { if ($_.PSIsContainer) { 0 } else { 1 } } }, Name |

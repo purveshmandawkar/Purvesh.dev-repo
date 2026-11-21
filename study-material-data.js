@@ -471,6 +471,43 @@
                                                                                 ]
                                                                },
                                                                {
+                                                                   "name":  "Handwritten VLSI",
+                                                                   "type":  "folder",
+                                                                   "path":  "TE material/VLSI/VLSI  Handwritten",
+                                                                   "children":  [
+                                                                                    {
+                                                                                        "name":  "UNIT I.pdf",
+                                                                                        "type":  "file",
+                                                                                        "path":  "TE material/VLSI/VLSI  Handwritten/UNIT I.pdf"
+                                                                                    },
+                                                                                    {
+                                                                                        "name":  "UNIT II.pdf",
+                                                                                        "type":  "file",
+                                                                                        "path":  "TE material/VLSI/VLSI  Handwritten/UNIT II.pdf"
+                                                                                    },
+                                                                                    {
+                                                                                        "name":  "UNIT III.pdf",
+                                                                                        "type":  "file",
+                                                                                        "path":  "TE material/VLSI/VLSI  Handwritten/UNIT III.pdf"
+                                                                                    },
+                                                                                    {
+                                                                                        "name":  "UNIT IV.pdf",
+                                                                                        "type":  "file",
+                                                                                        "path":  "TE material/VLSI/VLSI  Handwritten/UNIT IV.pdf"
+                                                                                    },
+                                                                                    {
+                                                                                        "name":  "UNIT V.pdf",
+                                                                                        "type":  "file",
+                                                                                        "path":  "TE material/VLSI/VLSI  Handwritten/UNIT V.pdf"
+                                                                                    },
+                                                                                    {
+                                                                                        "name":  "VLSI_Unit_V_Complete_Answers.pdf",
+                                                                                        "type":  "file",
+                                                                                        "path":  "TE material/VLSI/VLSI  Handwritten/VLSI_Unit_V_Complete_Answers.pdf"
+                                                                                    }
+                                                                                ]
+                                                               },
+                                                               {
                                                                    "name":  "VLSI Notes",
                                                                    "type":  "folder",
                                                                    "path":  "TE material/VLSI/VLSI Notes",
