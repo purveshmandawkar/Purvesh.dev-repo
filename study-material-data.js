@@ -193,6 +193,11 @@
                                                                                         "path":  "TE material/CN/Question banks/be_electronics-and-telecommunication-engineering_semester-6_2026_march_cellular-networks-cn-pattern-2019.pdf"
                                                                                     }
                                                                                 ]
+                                                               },
+                                                               {
+                                                                   "name":  "cn (unit 3-5).pdf",
+                                                                   "type":  "file",
+                                                                   "path":  "TE material/CN/cn (unit 3-5).pdf"
                                                                }
                                                            ]
                                           },
@@ -344,6 +349,11 @@
                                                                                         "path":  "TE material/CNS/Question bank/be_electronics-and-telecommunication-engineering_semester-5_2025_november_computer-networks-cn-pattern-2019.pdf"
                                                                                     }
                                                                                 ]
+                                                               },
+                                                               {
+                                                                   "name":  "cns(unit 3-5).pdf",
+                                                                   "type":  "file",
+                                                                   "path":  "TE material/CNS/cns(unit 3-5).pdf"
                                                                }
                                                            ]
                                           },
@@ -352,6 +362,18 @@
                                               "type":  "folder",
                                               "path":  "TE material/MCA",
                                               "children":  [
+                                                               {
+                                                                   "name":  "Handwritten 2024 pattern",
+                                                                   "type":  "folder",
+                                                                   "path":  "TE material/MCA/Handwritten 2024 pattern",
+                                                                   "children":  [
+                                                                                    {
+                                                                                        "name":  "mca(unit 3-5).pdf",
+                                                                                        "type":  "file",
+                                                                                        "path":  "TE material/MCA/Handwritten 2024 pattern/mca(unit 3-5).pdf"
+                                                                                    }
+                                                                                ]
+                                                               },
                                                                {
                                                                    "name":  "NOTES",
                                                                    "type":  "folder",
@@ -471,7 +493,7 @@
                                                                                 ]
                                                                },
                                                                {
-                                                                   "name":  "Handwritten VLSI",
+                                                                   "name":  "VLSI  Handwritten",
                                                                    "type":  "folder",
                                                                    "path":  "TE material/VLSI/VLSI  Handwritten",
                                                                    "children":  [
@@ -499,6 +521,11 @@
                                                                                         "name":  "UNIT V.pdf",
                                                                                         "type":  "file",
                                                                                         "path":  "TE material/VLSI/VLSI  Handwritten/UNIT V.pdf"
+                                                                                    },
+                                                                                    {
+                                                                                        "name":  "vlsi(unit 3-5).pdf",
+                                                                                        "type":  "file",
+                                                                                        "path":  "TE material/VLSI/VLSI  Handwritten/vlsi(unit 3-5).pdf"
                                                                                     },
                                                                                     {
                                                                                         "name":  "VLSI_Unit_V_Complete_Answers.pdf",
